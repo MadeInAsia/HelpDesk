@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 
 namespace HelpDesk
 {
@@ -14,7 +15,7 @@ namespace HelpDesk
     {
    
         private bool isUsernameCleared = false;
-        private bool isPasswordCleared = false;
+        private bool isPasswordCleared = false;   
 
         public LoginWindow()
         {
@@ -23,6 +24,7 @@ namespace HelpDesk
             // Assign event handlers dynamically
             UsernameText.Enter += UsernameText_Enter;
             PwdText.Enter += PwdText_Enter;
+
         }
 
         private void LoginWindow_Load(object sender, EventArgs e)
@@ -82,7 +84,7 @@ namespace HelpDesk
 
         private void PwdText_TextChanged(object sender, EventArgs e)
         {
-
+            PwdText.PasswordChar = '*';
         }
 
         private void UsernameText_Enter(object sender, EventArgs e)
