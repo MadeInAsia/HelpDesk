@@ -46,6 +46,11 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Contact.cs" />
+    <Compile Include="Arbeiter.cs" />
+    <Compile Include="Statuse.cs" />
+    <Compile Include="Ticket.cs" />
+    <Compile Include="Types.cs" />
     <Compile Include="WinAdmin.cs">
       <SubType>Form</SubType>
     </Compile>
