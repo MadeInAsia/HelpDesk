@@ -1,0 +1,6 @@
+[submodule "path/to/submodule"]
+	path = path/to/submodule
+	url = https://github.com/t0int1337/BunifuUiCrack.git
+[submodule "path/to/BunifuCrack"]
+	path = path/to/BunifuCrack
+	url = https://github.com/mike024wk/BunifuCrack.git
