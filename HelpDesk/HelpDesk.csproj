@@ -224,7 +224,9 @@
   <ItemGroup>
     <None Include="Resources\icons8-fegen-32.png" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Folder Include="BunifuCrackLicense\" />
+  </ItemGroup>
   <ItemGroup>
     <Content Include="Bunifu\Bunifu.Licensing.dll" />
     <Content Include="Bunifu\Bunifu.UI.WinForms.1.5.3.dll" />
