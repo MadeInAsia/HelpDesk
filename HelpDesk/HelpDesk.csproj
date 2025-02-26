@@ -158,6 +158,7 @@
     <EmbeddedResource Include="LoginWindow.resx">
       <DependentUpon>LoginWindow.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Properties\licenses.licx" />
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
@@ -261,6 +262,16 @@
     <Content Include="Bunifu\Bunifu.UI.WinForms.BunifuTransition.dll" />
     <Content Include="Bunifu\Bunifu.UI.WinForms.BunifuUserControl.dll" />
     <Content Include="Bunifu\Bunifu.UI.WinForms.Deprecated.dll" />
+    <None Include="Resources\icons8-home-50.png" />
+    <None Include="Resources\icons8-list-60.png" />
+    <None Include="Resources\icons8-bulleted-list-50.png" />
+    <None Include="Resources\icons8-bulleted-list-96.png" />
+    <None Include="Resources\icons8-topic-push-notification-48 %281%29.png" />
+    <None Include="Resources\icons8-speed-64.png" />
+    <None Include="Resources\icons8-message-read-48.png" />
+    <None Include="Resources\icons8-info-48.png" />
+    <None Include="Resources\icons8-content-48.png" />
+    <None Include="Resources\icons8-close-48.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

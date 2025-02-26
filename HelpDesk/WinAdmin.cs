@@ -16,5 +16,10 @@ namespace HelpDesk
         {
             InitializeComponent();
         }
+
+        private void bunifuPanel2_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
