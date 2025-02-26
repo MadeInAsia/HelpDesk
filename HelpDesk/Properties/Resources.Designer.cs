@@ -173,9 +173,29 @@ namespace HelpDesk.Properties {
         /// <summary>
         ///   Sucht eine lokalisierte Ressource vom Typ System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap icons8_männlicher_benutzer_eingekreist_100 {
+            get {
+                object obj = ResourceManager.GetObject("icons8-männlicher-benutzer-eingekreist-100", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Sucht eine lokalisierte Ressource vom Typ System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap icons8_message_read_48 {
             get {
                 object obj = ResourceManager.GetObject("icons8-message-read-48", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Sucht eine lokalisierte Ressource vom Typ System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap icons8_name_100__1_ {
+            get {
+                object obj = ResourceManager.GetObject("icons8-name-100 (1)", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -226,6 +246,26 @@ namespace HelpDesk.Properties {
         internal static System.Drawing.Bitmap icons8_topic_push_notification_48__1_ {
             get {
                 object obj = ResourceManager.GetObject("icons8-topic-push-notification-48 (1)", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Sucht eine lokalisierte Ressource vom Typ System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap icons8_zuhause_100 {
+            get {
+                object obj = ResourceManager.GetObject("icons8-zuhause-100", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Sucht eine lokalisierte Ressource vom Typ System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap icons8_zuhause_100__1_ {
+            get {
+                object obj = ResourceManager.GetObject("icons8-zuhause-100 (1)", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

@@ -16,5 +16,10 @@ namespace HelpDesk
         {
             InitializeComponent();
         }
+
+        private void WinUser_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

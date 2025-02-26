@@ -262,6 +262,10 @@
     <Content Include="Bunifu\Bunifu.UI.WinForms.BunifuTransition.dll" />
     <Content Include="Bunifu\Bunifu.UI.WinForms.BunifuUserControl.dll" />
     <Content Include="Bunifu\Bunifu.UI.WinForms.Deprecated.dll" />
+    <None Include="Resources\icons8-zuhause-100 %281%29.png" />
+    <None Include="Resources\icons8-name-100 %281%29.png" />
+    <None Include="Resources\icons8-zuhause-100.png" />
+    <None Include="Resources\icons8-männlicher-benutzer-eingekreist-100.png" />
     <None Include="Resources\icons8-home-50.png" />
     <None Include="Resources\icons8-list-60.png" />
     <None Include="Resources\icons8-bulleted-list-50.png" />
