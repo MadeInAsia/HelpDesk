@@ -173,6 +173,18 @@
     <Compile Include="WinUser.Designer.cs">
       <DependentUpon>WinUser.cs</DependentUpon>
     </Compile>
+    <Compile Include="WinUserHome.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="WinUserHome.Designer.cs">
+      <DependentUpon>WinUserHome.cs</DependentUpon>
+    </Compile>
+    <Compile Include="WinUserTicketOpen.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="WinUserTicketOpen.Designer.cs">
+      <DependentUpon>WinUserTicketOpen.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="LoginWindow.resx">
       <DependentUpon>LoginWindow.cs</DependentUpon>
     </EmbeddedResource>
@@ -201,6 +213,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="WinUser.resx">
       <DependentUpon>WinUser.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="WinUserHome.resx">
+      <DependentUpon>WinUserHome.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="WinUserTicketOpen.resx">
+      <DependentUpon>WinUserTicketOpen.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
@@ -289,6 +307,8 @@
     <Content Include="Bunifu\Bunifu.UI.WinForms.BunifuTransition.dll" />
     <Content Include="Bunifu\Bunifu.UI.WinForms.BunifuUserControl.dll" />
     <Content Include="Bunifu\Bunifu.UI.WinForms.Deprecated.dll" />
+    <None Include="Resources\icons8-ticket-löschen-90.png" />
+    <None Include="Resources\icons8-ticket-hinzufügen-100.png" />
     <None Include="Resources\icons8-zuhause-100 %281%29.png" />
     <None Include="Resources\icons8-name-100 %281%29.png" />
     <None Include="Resources\icons8-zuhause-100.png" />

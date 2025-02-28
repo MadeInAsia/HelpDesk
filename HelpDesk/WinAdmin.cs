@@ -109,6 +109,11 @@ namespace HelpDesk
                 WinAdminStats = null;
             }
         }
+
+        private void CloseAllUser()
+        {
+
+        }
     }
     }
 

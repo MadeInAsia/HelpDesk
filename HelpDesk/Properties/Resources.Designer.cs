@@ -243,6 +243,26 @@ namespace HelpDesk.Properties {
         /// <summary>
         ///   Sucht eine lokalisierte Ressource vom Typ System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap icons8_ticket_hinzufügen_100 {
+            get {
+                object obj = ResourceManager.GetObject("icons8-ticket-hinzufügen-100", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Sucht eine lokalisierte Ressource vom Typ System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap icons8_ticket_löschen_90 {
+            get {
+                object obj = ResourceManager.GetObject("icons8-ticket-löschen-90", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Sucht eine lokalisierte Ressource vom Typ System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap icons8_topic_push_notification_48__1_ {
             get {
                 object obj = ResourceManager.GetObject("icons8-topic-push-notification-48 (1)", resourceCulture);
