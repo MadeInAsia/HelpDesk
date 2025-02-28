@@ -15,6 +15,25 @@ namespace HelpDesk
         public WinUserTicketOpen()
         {
             InitializeComponent();
+
+            topicList.Items.Add("Select");
+            topicList.Items.Add("Bug");
+            topicList.Items.Add("Feature Request");
+            topicList.Items.Add("Improvement");
+            topicList.Items.Add("Task");
+            topicList.Items.Add("Question");
+
+            topicList.SelectedIndex = 0;
+        }
+
+        private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void bunifuPanel1_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }
