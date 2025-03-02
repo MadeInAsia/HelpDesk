@@ -15,7 +15,6 @@ namespace HelpDesk
 {
     public partial class WinUserTicketOpen : Form
     {
-        private TicketController ticketController;
 
         public WinUserTicketOpen()
         {
