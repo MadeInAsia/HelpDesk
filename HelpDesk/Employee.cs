@@ -7,17 +7,19 @@ using System.Threading.Tasks;
 
 namespace HelpDesk
 {
-    class Arbeiter
+    public class Employee
     {
         public int ID { get; set; }
         public string Name { get; set; }
         public string Nachname { get; set; }
+        public string Department { get; set; }
 
-        public Arbeiter(int iD, string name, string nachname)
+        public Employee(int iD, string name, string nachname, string department)
         {
             ID = iD;
             Name = name;
             Nachname = nachname;
+            Department = department; 
         }
     }
 }

@@ -2,57 +2,61 @@
 using System.Collections.Generic;
 using System.IO.Pipes;
 using System.Linq;
+using System.Net.Sockets;
 using System.Text;
 using System.Threading.Tasks;
+using static TheArtOfDev.HtmlRenderer.Adapters.RGraphicsPath;
 
 namespace HelpDesk
 {
-    class Ticket
+    public class Ticket
     {
-        private int ticketID;
-        private Types type;
-        private Contact contact;
-        private string description;
-        private Statuse status;
-        private string priority;
-        private string openDate;
-        private string openTime;
-        private string closeDate;
-        private string closeTime;
-        private string responseTime;
-        private string resoltuionTime;
-        private Arbeiter abtretungsempfänger;
+        public string TicketID { get; set; }
+        public Contact Person { get; set; }  // User who created the ticket
+        public TicketPriority Priority { get; set; }
+        public TicketType Type { get; set; }
+        public string Topic { get; set; }
+        public string Reference { get; set; }
+        public string Details { get; set; }
+        public TicketStatus Status { get; set; }
+        public DateTime OpenDate { get; set; }
+        public DateTime? CloseDate { get; set; }
+        public Employee AssignedWorker { get; set; }
 
-        public Ticket(int ticketID, Types type, Contact contact, string description, Statuse status, string priority, string openDate, 
-            string openTime, string closeDate, string closeTime, string responseTime, string resoltuionTime, Arbeiter abtretungsempfänger)
+        public Ticket(Contact person, TicketPriority priority, TicketType type, TicketStatus status, string topic, string reference, string details)
         {
-            this.ticketID = ticketID;
-            this.type = type;
-            this.contact = contact;
-            this.description = description;
-            this.status = status;
-            this.priority = priority;
-            this.openDate = openDate;
-            this.openTime = openTime;
-            this.closeDate = closeDate;
-            this.closeTime = closeTime;
-            this.responseTime = responseTime;
-            this.resoltuionTime = resoltuionTime;
-            this.abtretungsempfänger = abtretungsempfänger;
+            TicketID = Guid.NewGuid().ToString();
+            Person = person;
+            Priority = priority;
+            Type = type;
+            Topic = topic;
+            Reference = reference;
+            Details = details;
+            Status = TicketStatus.Open;
+            OpenDate = DateTime.Now;
+            CloseDate = null;
+            AssignedWorker = null;
         }
-
-        public int TicketID { get => ticketID; set => ticketID = value; }
-        public string Description { get => description; set => description = value; }
-        public string Priority { get => priority; set => priority = value; }
-        public string OpenDate { get => openDate; set => openDate = value; }
-        public string OpenTime { get => openTime; set => openTime = value; }
-        public string CloseDate { get => closeDate; set => closeDate = value; }
-        public string CloseTime { get => closeTime; set => closeTime = value; }
-        public string ResponseTime { get => responseTime; set => responseTime = value; }
-        public string ResoltuionTime { get => resoltuionTime; set => resoltuionTime = value; }
-        internal Types Type { get => type; set => type = value; }
-        internal Contact Contact { get => contact; set => contact = value; }
-        internal Statuse Status { get => status; set => status = value; }
-        internal Arbeiter Abtretungsempfänger { get => abtretungsempfänger; set => abtretungsempfänger = value; }
+        
+        public enum TicketStatus
+        {
+            Open,
+            InProgress,
+            Closed
+        }
+        public enum TicketType
+        {
+            Incident,
+            ServiceRequest,
+            BugReport,
+            Other
+        }
+        public enum TicketPriority
+        {
+            Low,
+            Medium,
+            High,
+            Critical
+        }
     }
 }
