@@ -274,6 +274,7 @@
   <ItemGroup>
     <Folder Include="bin\" />
     <Folder Include="BunifuCrackLicense\" />
+    <Folder Include="obj\Debug\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Bunifu\Bunifu.Licensing.dll" />
@@ -309,9 +310,6 @@
     <Content Include="Bunifu\Bunifu.UI.WinForms.BunifuTransition.dll" />
     <Content Include="Bunifu\Bunifu.UI.WinForms.BunifuUserControl.dll" />
     <Content Include="Bunifu\Bunifu.UI.WinForms.Deprecated.dll" />
-    <Content Include="tickets.xml">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
     <None Include="Resources\icons8-ticket-löschen-90.png" />
     <None Include="Resources\icons8-ticket-hinzufügen-100.png" />
     <None Include="Resources\icons8-zuhause-100 %281%29.png" />

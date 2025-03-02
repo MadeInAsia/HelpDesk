@@ -24,6 +24,7 @@ namespace HelpDesk
         public void AddTicket(Ticket ticket)
         {
             tickets.Add(ticket);
+            SaveTicketsFile();
         }
 
         public void RemoveTicket(Ticket ticket)
@@ -35,14 +36,9 @@ namespace HelpDesk
         {
             // Update ticket
         }
-
-        private string GetXmlFilePath()
-        {
-            return Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "tickets.xml");
-        }
         public void SaveTicketsFile()
         {
-            string filePath = GetXmlFilePath();//xmlfile
+            string filePath =  "tickets.xml";
 
             XDocument doc = new XDocument(
                    new XElement("Tickets", tickets.ConvertAll(ticket =>
@@ -67,19 +63,20 @@ namespace HelpDesk
                );
             doc.Save(filePath);
 
+            // Confirm save location
+            MessageBox.Show($"Tickets saved successfully to: {filePath}", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
 
         public void LoadTicketsFile()
         {
-            string filePath = GetXmlFilePath(); 
+             string filePath = "tickets.xml";
 
             if (!File.Exists(filePath)) // if doesnt exist create new file
             {
                 XDocument newDoc = new XDocument(new XElement("Tickets"));
                 newDoc.Save(filePath);
-                return; 
+                return;
             }
-
             XDocument doc = XDocument.Load(filePath);
             foreach (XElement element in doc.Element("Tickets").Elements("Ticket"))
             {
@@ -90,7 +87,11 @@ namespace HelpDesk
 
         private Ticket CreateTicketFromXML(XElement element)
         {
-            Contact person = ContactFromXML(element.Element("Person"));
+            Contact person = ContactFromXML(element.Element("Contact"));
+            if (person == null)
+            {
+                person = new Contact("Unknown", "Unknown", "unknown@unknown.com"); // Assign default 
+             }
             Employee assignedWorker = AssignedWorkerFromXML(element.Element("AssignedWorker"));
             DateTime? closeDate = CloseDateFromXML(element.Element("CloseDate"));
 
@@ -138,7 +139,7 @@ namespace HelpDesk
         private Employee AssignedWorkerFromXML(XElement assignedWorkerElement)
         {
             if (assignedWorkerElement == null || assignedWorkerElement.Element("Employee") == null)
-                return null; // No worker assigned
+                return null; 
 
             XElement employeeElement = assignedWorkerElement.Element("Employee");
             return new Employee(

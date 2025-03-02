@@ -51,21 +51,21 @@ namespace HelpDesk
                 MessageBox.Show("Please fill in all required fields (Name, Surname, Email, Topic)", "Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
             }
-            // Get from ComboBox
+
             Ticket.TicketPriority priority = (Ticket.TicketPriority)cbPriority.SelectedItem;
             Ticket.TicketType type = (Ticket.TicketType)cbType.SelectedItem;
 
-            // Create Contact object
             Contact person = new Contact(name, surname, email);
-
-            // Create Ticket object (default status: Open)
             Ticket newTicket = new Ticket(person, priority, type, Ticket.TicketStatus.Open, topic, reference, details);
+
+            // ✅ Debug message to confirm ticket creation
+            MessageBox.Show($"New Ticket Created:\nID: {newTicket.TicketID}\nName: {newTicket.Person.Name}", "Debug Info", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
             // Add ticket to the system
             Program.ticketController.AddTicket(newTicket); // add to list
             Program.ticketController.SaveTicketsFile(); // Save to XML
 
-            // Show success message
+            MessageBox.Show($"Tickets saved. Current ticket count: {Program.ticketController.GetTickets().Count}", "Debug Info", MessageBoxButtons.OK, MessageBoxIcon.Information);
             MessageBox.Show("Ticket created successfully!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
         }
