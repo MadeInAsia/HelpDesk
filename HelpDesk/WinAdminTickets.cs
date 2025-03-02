@@ -22,7 +22,25 @@ namespace HelpDesk
    
         private void WinAdminTickets_Load(object sender, EventArgs e)
         {
+            LoadTicketsToListView();
+        }
 
+        private void LoadTicketsToListView()
+        {
+            List<Ticket> tickets = Program.ticketController.GetTickets();
+
+            listView1.Items.Clear();
+
+            foreach (Ticket ticket in tickets)
+            {
+                ListViewItem item = new ListViewItem(ticket.TicketID);
+                item.SubItems.Add(ticket.Person.Name + " " + ticket.Person.Nachname); // Requester Name
+                item.SubItems.Add(ticket.Priority.ToString());
+                item.SubItems.Add(ticket.Status.ToString());
+                item.SubItems.Add(ticket.Topic);
+
+                listView1.Items.Add(item);
+            }
         }
 
         private void listView1_SelectedIndexChanged(object sender, EventArgs e)
@@ -37,15 +55,11 @@ namespace HelpDesk
             listView1.FullRowSelect = true;
             listView1.GridLines = true;
 
-            listView1.Columns.Add("ID", 50);
-            listView1.Columns.Add("Name", 100);
-            listView1.Columns.Add("Nachname", 50);
-            listView1.Columns.Add("Email", 200);
-            listView1.Columns.Add("Abteilung", 150);
-
-            listView1.Items.Add(new ListViewItem(new[] { "1", "Alice", "Akermann", "Alice1@hotmail.com", "HR"}));
-            listView1.Items.Add(new ListViewItem(new[] { "2", "Bob", "Butter", "Butterboy@gmail.com", "IT"}));
-            listView1.Items.Add(new ListViewItem(new[] { "3", "Charlie", "Dorf", "CharliesFaktory@yahoo.com", "Office"}));
+            listView1.Columns.Add("Ticket ID", 100);
+            listView1.Columns.Add("Requester Name", 150);
+            listView1.Columns.Add("Priority", 100);
+            listView1.Columns.Add("Status", 100);
+            listView1.Columns.Add("Topic", 100);
         }
     }
 }
