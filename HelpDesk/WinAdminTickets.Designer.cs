@@ -28,11 +28,11 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.ListViewGroup listViewGroup3 = new System.Windows.Forms.ListViewGroup("ListViewGroup", System.Windows.Forms.HorizontalAlignment.Left);
-            System.Windows.Forms.ListViewGroup listViewGroup4 = new System.Windows.Forms.ListViewGroup("ListViewGroup", System.Windows.Forms.HorizontalAlignment.Left);
+            System.Windows.Forms.ListViewGroup listViewGroup5 = new System.Windows.Forms.ListViewGroup("ListViewGroup", System.Windows.Forms.HorizontalAlignment.Left);
+            System.Windows.Forms.ListViewGroup listViewGroup6 = new System.Windows.Forms.ListViewGroup("ListViewGroup", System.Windows.Forms.HorizontalAlignment.Left);
             this.label1 = new System.Windows.Forms.Label();
             this.listView1 = new System.Windows.Forms.ListView();
-            this.label2 = new System.Windows.Forms.Label();
+            this.pnlTicketDetails = new System.Windows.Forms.Panel();
             this.SuspendLayout();
             // 
             // label1
@@ -40,7 +40,7 @@
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 27.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.label1.Location = new System.Drawing.Point(747, 207);
+            this.label1.Location = new System.Drawing.Point(226, 49);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(175, 42);
             this.label1.TabIndex = 0;
@@ -48,31 +48,31 @@
             // 
             // listView1
             // 
-            listViewGroup3.Header = "ListViewGroup";
-            listViewGroup3.Name = "listViewGroup1";
-            listViewGroup4.Header = "ListViewGroup";
-            listViewGroup4.Name = "listViewGroup2";
+            listViewGroup5.Header = "ListViewGroup";
+            listViewGroup5.Name = "listViewGroup1";
+            listViewGroup6.Header = "ListViewGroup";
+            listViewGroup6.Name = "listViewGroup2";
             this.listView1.Groups.AddRange(new System.Windows.Forms.ListViewGroup[] {
-            listViewGroup3,
-            listViewGroup4});
+            listViewGroup5,
+            listViewGroup6});
             this.listView1.HideSelection = false;
-            this.listView1.Location = new System.Drawing.Point(171, 118);
+            this.listView1.Location = new System.Drawing.Point(52, 107);
             this.listView1.Name = "listView1";
-            this.listView1.Size = new System.Drawing.Size(544, 390);
+            this.listView1.Size = new System.Drawing.Size(544, 457);
             this.listView1.TabIndex = 1;
             this.listView1.UseCompatibleStateImageBehavior = false;
             this.listView1.View = System.Windows.Forms.View.Details;
             this.listView1.SelectedIndexChanged += new System.EventHandler(this.listView1_SelectedIndexChanged);
+            this.listView1.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.listView1_MouseDoubleClick);
             // 
-            // label2
+            // pnlTicketDetails
             // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(432, 78);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(385, 13);
-            this.label2.TabIndex = 2;
-            this.label2.Text = "this will be changed to Tickets and their priority etc. not people, this just for" +
-    " show";
+            this.pnlTicketDetails.BackColor = System.Drawing.Color.LightCyan;
+            this.pnlTicketDetails.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.pnlTicketDetails.Location = new System.Drawing.Point(619, 107);
+            this.pnlTicketDetails.Name = "pnlTicketDetails";
+            this.pnlTicketDetails.Size = new System.Drawing.Size(410, 457);
+            this.pnlTicketDetails.TabIndex = 2;
             // 
             // WinAdminTickets
             // 
@@ -80,7 +80,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Teal;
             this.ClientSize = new System.Drawing.Size(1054, 648);
-            this.Controls.Add(this.label2);
+            this.Controls.Add(this.pnlTicketDetails);
             this.Controls.Add(this.listView1);
             this.Controls.Add(this.label1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
@@ -98,6 +98,6 @@
 
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.ListView listView1;
-        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Panel pnlTicketDetails;
     }
 }

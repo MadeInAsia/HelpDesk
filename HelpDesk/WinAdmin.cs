@@ -66,10 +66,10 @@ namespace HelpDesk
             WinAdminTickets.Show();
         }
 
-        private void btnMessages_Click(object sender, EventArgs e)
+        private void btnComments_Click(object sender, EventArgs e)
         {
             CloseAllForms();
-            WinAdminMessages = new WinAdminMessages();
+            WinAdminMessages = new WinAdminComments();
             WinAdminMessages.FormBorderStyle = FormBorderStyle.None;
             WinAdminMessages.TopLevel = false;
             WinAdminMessages.Dock = DockStyle.None;

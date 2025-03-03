@@ -1,6 +1,6 @@
 ﻿namespace HelpDesk
 {
-    partial class WinAdminMessages
+    partial class WinAdminComments
     {
         /// <summary>
         /// Required designer variable.

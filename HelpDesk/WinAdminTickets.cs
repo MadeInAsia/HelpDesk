@@ -50,7 +50,6 @@ namespace HelpDesk
 
         private void SetupListView()
         {
-            // CHANGE THIS TO TICKETS not people 
             listView1.View = View.Details;
             listView1.FullRowSelect = true;
             listView1.GridLines = true;
@@ -60,6 +59,39 @@ namespace HelpDesk
             listView1.Columns.Add("Priority", 100);
             listView1.Columns.Add("Status", 100);
             listView1.Columns.Add("Topic", 100);
+        }
+
+        private void listView1_MouseDoubleClick(object sender, MouseEventArgs e)
+        {
+            string selectedTicketID = listView1.SelectedItems[0].Text;
+
+            Ticket selectedTicket = null;
+            foreach (Ticket ticket in Program.ticketController.GetTickets())
+            {
+                if (ticket.TicketID == selectedTicketID)
+                {
+                    selectedTicket = ticket;
+                    break;
+                }
+            }
+            if (selectedTicket != null)
+            {
+                LoadTicketDetailsPanel(selectedTicket);
+            }
+        }
+
+        private void LoadTicketDetailsPanel(Ticket selectedTicket)
+        {
+            pnlTicketDetails.Controls.Clear();
+
+            WinAdminTicketDetails ticketDetailsForm = new WinAdminTicketDetails(selectedTicket);
+
+            ticketDetailsForm.TopLevel = false;
+            ticketDetailsForm.FormBorderStyle = FormBorderStyle.None;
+            ticketDetailsForm.Dock = DockStyle.Fill;
+
+            pnlTicketDetails.Controls.Add(ticketDetailsForm);
+            ticketDetailsForm.Show();
         }
     }
 }

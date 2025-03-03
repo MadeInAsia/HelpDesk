@@ -23,7 +23,7 @@ namespace HelpDesk
         public DateTime? CloseDate { get; set; }
         public Employee AssignedWorker { get; set; }
 
-        public Ticket(Contact person, TicketPriority priority, TicketType type, TicketStatus status, string topic, string reference, string details)
+        public Ticket(Contact person, TicketPriority priority, TicketType type, TicketStatus status, string topic, string reference, string details, Employee assignedWorker = null)
         {
             TicketID = Guid.NewGuid().ToString();
             Person = person;
@@ -35,7 +35,7 @@ namespace HelpDesk
             Status = TicketStatus.Open;
             OpenDate = DateTime.Now;
             CloseDate = null;
-            AssignedWorker = null;
+            AssignedWorker = assignedWorker;
         }
         
         public enum TicketStatus

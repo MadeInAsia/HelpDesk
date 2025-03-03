@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace HelpDesk
 {
-    public partial class WinAdminMessages: Form
+    public partial class WinAdminComments: Form
     {
-        public WinAdminMessages()
+        public WinAdminComments()
         {
             InitializeComponent();
         }

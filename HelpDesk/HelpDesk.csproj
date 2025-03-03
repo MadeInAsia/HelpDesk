@@ -150,17 +150,23 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="WinAdminMessages.cs">
+    <Compile Include="WinAdminComments.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="WinAdminMessages.Designer.cs">
-      <DependentUpon>WinAdminMessages.cs</DependentUpon>
+    <Compile Include="WinAdminComments.Designer.cs">
+      <DependentUpon>WinAdminComments.cs</DependentUpon>
     </Compile>
     <Compile Include="WinAdminStats.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="WinAdminStats.Designer.cs">
       <DependentUpon>WinAdminStats.cs</DependentUpon>
+    </Compile>
+    <Compile Include="WinAdminTicketDetails.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="WinAdminTicketDetails.Designer.cs">
+      <DependentUpon>WinAdminTicketDetails.cs</DependentUpon>
     </Compile>
     <Compile Include="WinAdminTickets.cs">
       <SubType>Form</SubType>
@@ -203,11 +209,14 @@
     <EmbeddedResource Include="WinAdmin.resx">
       <DependentUpon>WinAdmin.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="WinAdminMessages.resx">
-      <DependentUpon>WinAdminMessages.cs</DependentUpon>
+    <EmbeddedResource Include="WinAdminComments.resx">
+      <DependentUpon>WinAdminComments.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="WinAdminStats.resx">
       <DependentUpon>WinAdminStats.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="WinAdminTicketDetails.resx">
+      <DependentUpon>WinAdminTicketDetails.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="WinAdminTickets.resx">
       <DependentUpon>WinAdminTickets.cs</DependentUpon>

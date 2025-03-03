@@ -447,7 +447,7 @@
         FJ0OhZidxIPMjvSUxvOT0IdXJklJDsx6enoG8w+DFI3hsxGSVQAAAABJRU5ErkJggg==
 </value>
   </data>
-  <data name="btnMessages.BackgroundImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+  <data name="btnComment.BackgroundImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAANEAAAAwCAYAAACPIp/IAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
         YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAACtSURBVHhe7dOhEYAwAMBA9l8G9sGgugADwNVWwcW+eBOf
@@ -456,7 +456,7 @@
         EUQmgshEEJkIIhNBNCe61wh8dr/JGYB4zd0hnwAAAABJRU5ErkJggg==
 </value>
   </data>
-  <data name="btnMessages.IdleIconLeftImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+  <data name="btnComment.IdleIconLeftImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAADAAAAAwCAYAAABXAvmHAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAL
         DAAACwwBP0AiyAAAAllJREFUaEPtmF2rTUEYx3/eFUXSKUlJuXEnJC91Sucr+Ah8BfkGLiU37olceL10

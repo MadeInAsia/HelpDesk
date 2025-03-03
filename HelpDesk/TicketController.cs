@@ -15,10 +15,10 @@ namespace HelpDesk
         private List<Ticket> tickets = new List<Ticket>();
 
         public void CreateTicket(string name, string surname, string email, Ticket.TicketPriority priority,
-            Ticket.TicketType type, Ticket.TicketStatus status, string topic, string reference, string details)
+            Ticket.TicketType type, Ticket.TicketStatus status, string topic, string reference, string details, Employee assignedWorker = null)
         {
             Contact person = new Contact(name, surname, email);
-            Ticket newTicket = new Ticket(person, priority, type, status, topic, reference, details);
+            Ticket newTicket = new Ticket(person, priority, type, status, topic, reference, details, assignedWorker);
             AddTicket(newTicket);
         }
         public void AddTicket(Ticket ticket)
