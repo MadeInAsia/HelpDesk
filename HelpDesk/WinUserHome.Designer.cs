@@ -29,11 +29,14 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(WinUserHome));
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             this.bunifuPanel1 = new Bunifu.UI.WinForms.BunifuPanel();
-            this.label1 = new System.Windows.Forms.Label();
-            this.openTicketsList = new System.Windows.Forms.ListBox();
             this.ticketCounter = new System.Windows.Forms.Label();
+            this.openTicketsGridView = new Bunifu.UI.WinForms.BunifuDataGridView();
             this.bunifuPanel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.openTicketsGridView)).BeginInit();
             this.SuspendLayout();
             // 
             // bunifuPanel1
@@ -45,8 +48,7 @@
             this.bunifuPanel1.BorderRadius = 30;
             this.bunifuPanel1.BorderThickness = 1;
             this.bunifuPanel1.Controls.Add(this.ticketCounter);
-            this.bunifuPanel1.Controls.Add(this.label1);
-            this.bunifuPanel1.Controls.Add(this.openTicketsList);
+            this.bunifuPanel1.Controls.Add(this.openTicketsGridView);
             this.bunifuPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.bunifuPanel1.Location = new System.Drawing.Point(0, 0);
             this.bunifuPanel1.Name = "bunifuPanel1";
@@ -54,35 +56,75 @@
             this.bunifuPanel1.Size = new System.Drawing.Size(620, 427);
             this.bunifuPanel1.TabIndex = 0;
             // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Yu Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.label1.Location = new System.Drawing.Point(37, 74);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(97, 17);
-            this.label1.TabIndex = 3;
-            this.label1.Text = "Open Tickets:";
-            // 
-            // openTicketsList
-            // 
-            this.openTicketsList.FormattingEnabled = true;
-            this.openTicketsList.Location = new System.Drawing.Point(40, 94);
-            this.openTicketsList.Name = "openTicketsList";
-            this.openTicketsList.Size = new System.Drawing.Size(354, 251);
-            this.openTicketsList.TabIndex = 2;
-            // 
             // ticketCounter
             // 
             this.ticketCounter.AutoSize = true;
             this.ticketCounter.Font = new System.Drawing.Font("Yu Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.ticketCounter.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.ticketCounter.Location = new System.Drawing.Point(131, 74);
+            this.ticketCounter.Location = new System.Drawing.Point(12, 9);
             this.ticketCounter.Name = "ticketCounter";
-            this.ticketCounter.Size = new System.Drawing.Size(15, 17);
+            this.ticketCounter.Size = new System.Drawing.Size(108, 17);
             this.ticketCounter.TabIndex = 4;
-            this.ticketCounter.Text = "0";
+            this.ticketCounter.Text = "Open Tickets: 0";
+            // 
+            // openTicketsGridView
+            // 
+            this.openTicketsGridView.AllowCustomTheming = false;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(248)))), ((int)(((byte)(251)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.Black;
+            this.openTicketsGridView.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
+            this.openTicketsGridView.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.openTicketsGridView.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.openTicketsGridView.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal;
+            this.openTicketsGridView.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.Color.DodgerBlue;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Segoe UI Semibold", 11.75F, System.Drawing.FontStyle.Bold);
+            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(115)))), ((int)(((byte)(204)))));
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.openTicketsGridView.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
+            this.openTicketsGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.openTicketsGridView.CurrentTheme.AlternatingRowsStyle.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(248)))), ((int)(((byte)(251)))), ((int)(((byte)(255)))));
+            this.openTicketsGridView.CurrentTheme.AlternatingRowsStyle.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold);
+            this.openTicketsGridView.CurrentTheme.AlternatingRowsStyle.ForeColor = System.Drawing.Color.Black;
+            this.openTicketsGridView.CurrentTheme.AlternatingRowsStyle.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(210)))), ((int)(((byte)(232)))), ((int)(((byte)(255)))));
+            this.openTicketsGridView.CurrentTheme.AlternatingRowsStyle.SelectionForeColor = System.Drawing.Color.Black;
+            this.openTicketsGridView.CurrentTheme.BackColor = System.Drawing.Color.White;
+            this.openTicketsGridView.CurrentTheme.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.openTicketsGridView.CurrentTheme.HeaderStyle.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.openTicketsGridView.CurrentTheme.HeaderStyle.Font = new System.Drawing.Font("Segoe UI Semibold", 11.75F, System.Drawing.FontStyle.Bold);
+            this.openTicketsGridView.CurrentTheme.HeaderStyle.ForeColor = System.Drawing.Color.IndianRed;
+            this.openTicketsGridView.CurrentTheme.HeaderStyle.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(64)))), ((int)(((byte)(0)))));
+            this.openTicketsGridView.CurrentTheme.HeaderStyle.SelectionForeColor = System.Drawing.Color.White;
+            this.openTicketsGridView.CurrentTheme.Name = null;
+            this.openTicketsGridView.CurrentTheme.RowsStyle.BackColor = System.Drawing.Color.White;
+            this.openTicketsGridView.CurrentTheme.RowsStyle.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold);
+            this.openTicketsGridView.CurrentTheme.RowsStyle.ForeColor = System.Drawing.Color.Black;
+            this.openTicketsGridView.CurrentTheme.RowsStyle.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(210)))), ((int)(((byte)(232)))), ((int)(((byte)(255)))));
+            this.openTicketsGridView.CurrentTheme.RowsStyle.SelectionForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle3.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold);
+            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(210)))), ((int)(((byte)(232)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.openTicketsGridView.DefaultCellStyle = dataGridViewCellStyle3;
+            this.openTicketsGridView.EnableHeadersVisualStyles = false;
+            this.openTicketsGridView.GridColor = System.Drawing.Color.White;
+            this.openTicketsGridView.HeaderBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.openTicketsGridView.HeaderBgColor = System.Drawing.Color.Empty;
+            this.openTicketsGridView.HeaderForeColor = System.Drawing.Color.IndianRed;
+            this.openTicketsGridView.Location = new System.Drawing.Point(12, 29);
+            this.openTicketsGridView.Name = "openTicketsGridView";
+            this.openTicketsGridView.RowHeadersVisible = false;
+            this.openTicketsGridView.RowTemplate.Height = 40;
+            this.openTicketsGridView.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.openTicketsGridView.Size = new System.Drawing.Size(596, 386);
+            this.openTicketsGridView.TabIndex = 6;
+            this.openTicketsGridView.Theme = Bunifu.UI.WinForms.BunifuDataGridView.PresetThemes.Light;
             // 
             // WinUserHome
             // 
@@ -98,6 +140,7 @@
             this.Text = "WinUserHome";
             this.bunifuPanel1.ResumeLayout(false);
             this.bunifuPanel1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.openTicketsGridView)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -105,8 +148,7 @@
         #endregion
 
         private Bunifu.UI.WinForms.BunifuPanel bunifuPanel1;
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.ListBox openTicketsList;
         private System.Windows.Forms.Label ticketCounter;
+        private Bunifu.UI.WinForms.BunifuDataGridView openTicketsGridView;
     }
 }

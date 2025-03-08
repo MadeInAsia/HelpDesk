@@ -188,7 +188,7 @@
             this.bunifuRadialGauge1.Name = "bunifuRadialGauge1";
             this.bunifuRadialGauge1.Prefix = "";
             this.bunifuRadialGauge1.ProgressBackColor = System.Drawing.Color.LightBlue;
-            this.bunifuRadialGauge1.ProgressBgColor = System.Drawing.Color.LightBlue;
+            this.bunifuRadialGauge1.ProgressBackColor = System.Drawing.Color.LightBlue;
             this.bunifuRadialGauge1.ProgressCap = Bunifu.UI.WinForms.BunifuRadialGauge.CapStyles.Flat;
             this.bunifuRadialGauge1.ProgressColor = System.Drawing.Color.DodgerBlue;
             this.bunifuRadialGauge1.ProgressColor1 = System.Drawing.Color.DodgerBlue;

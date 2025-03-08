@@ -36,7 +36,7 @@ namespace HelpDesk
 
         }
 
-        private void bunifuButton1_Click(object sender, EventArgs e)
+        private void openTicketBtn_Click(object sender, EventArgs e)
         {
             string name = tbName.Text.Trim();
             string surname = tbSurname.Text.Trim();
@@ -69,5 +69,8 @@ namespace HelpDesk
             MessageBox.Show("Ticket created successfully!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
         }
+
+
+
     }
 }
