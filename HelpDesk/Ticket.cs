@@ -58,7 +58,7 @@ namespace HelpDesk
             Comments = new List<string>();
 
             if (Comments.Count == 0)
-            LogComment("Ticket created by " + person.Name + person.Nachname); 
+                LogComment("Ticket created by " + person.Name + person.Nachname);
 
             // change this so that the listbox only shows the ticket instance once, not from user and admin at the same time only one and other or so 
         }
@@ -100,10 +100,10 @@ namespace HelpDesk
         }
         public void UpdatePriority(TicketPriority newPriority)
         {
-            if (Priority != newPriority) 
+            if (Priority != newPriority)
             {
                 Priority = newPriority;
-                LogComment("Priority changed to" + newPriority +" on " + DateTime.Now);
+                LogComment("Priority changed to" + newPriority + " on " + DateTime.Now);
             }
         }
 

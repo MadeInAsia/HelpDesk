@@ -10,7 +10,7 @@ using System.Windows.Forms;
 
 namespace HelpDesk
 {
-    public partial class WinAdminTickets: Form
+    public partial class WinAdminTickets : Form
     {
         public WinAdminTickets()
         {
@@ -19,7 +19,7 @@ namespace HelpDesk
         }
 
 
-   
+
         private void WinAdminTickets_Load(object sender, EventArgs e)
         {
             LoadTicketsToListView();

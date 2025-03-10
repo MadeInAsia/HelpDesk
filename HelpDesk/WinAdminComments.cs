@@ -10,7 +10,7 @@ using System.Windows.Forms;
 
 namespace HelpDesk
 {
-    public partial class WinAdminComments: Form
+    public partial class WinAdminComments : Form
     {
         private Ticket currentTicket;
         public WinAdminComments(Ticket ticket)

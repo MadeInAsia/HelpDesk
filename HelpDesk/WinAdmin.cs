@@ -15,10 +15,58 @@ namespace HelpDesk
         private Form WinAdminTickets = null;
         private Form WinAdminMessages = null;
         private Form WinAdminStats = null;
+        private TicketController ticketController;
 
         public WinAdmin()
         {
             InitializeComponent();
+            ticketController = new TicketController();
+            LoadDashboard();
+        }
+
+        private void LoadDashboard()
+        {
+            List<Ticket> tickets = Program.ticketController.GetTickets();
+
+            int totalTickets = tickets.Count;
+            int completedTickets = tickets.Count(t => t.Status == Ticket.TicketStatus.Closed);
+            int openTickets = tickets.Count(t => t.Status == Ticket.TicketStatus.Open);
+            int inProgressTickets = tickets.Count(t => t.Status == Ticket.TicketStatus.InProgress);
+            int highPriorityTickets = tickets.Count(t => t.Priority == Ticket.TicketPriority.High || t.Priority == Ticket.TicketPriority.Critical);
+
+            double completionRate;
+            if (totalTickets > 0)
+            {
+                completionRate = (double)completedTickets / totalTickets * 100;
+            }
+            else
+            {
+                completionRate = 0;
+            }
+
+
+            lblTotalTickets.Text = totalTickets.ToString();
+            lblCompletedPercentage.Text = $"{completionRate:F1}%";
+            lblOpenTickets.Text = openTickets.ToString();
+            lblInProgressTickets.Text = inProgressTickets.ToString();
+            lblHighPriorityTickets.Text = highPriorityTickets.ToString();
+
+            // Radial Gauge
+            if (totalTickets > 0)
+            {
+                radialGauge.Value = completedTickets * 100 / totalTickets;
+                lblRadialSubtitle.Text = $"{completedTickets} / {totalTickets} Tickets Closed";
+            }
+
+            // Circle Progress
+            if (completionRate > 0)
+            {
+                circleProgress.Value = (int)completionRate;
+            }
+            else
+            {
+                circleProgress.Value = 0;
+            }
         }
 
         private void bunifuPanel2_Click(object sender, EventArgs e)
@@ -113,6 +161,11 @@ namespace HelpDesk
         {
 
         }
+
+        private void circleProgress_ProgressChanged(object sender, Bunifu.UI.WinForms.BunifuCircleProgress.ProgressChangedEventArgs e)
+        {
+
+        }
     }
-    }
+}
 

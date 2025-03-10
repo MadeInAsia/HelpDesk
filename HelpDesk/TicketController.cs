@@ -64,7 +64,7 @@ namespace HelpDesk
             string filePath = "tickets.xml";
             XElement root = new XElement("Tickets"); // root xml element
             foreach (Ticket ticket in tickets)
-            { 
+            {
                 XElement ticketElement = new XElement("Ticket",
                     new XElement("TicketID", ticket.TicketID),
                     new XElement("Contact",
@@ -119,7 +119,7 @@ namespace HelpDesk
 
         public void LoadTicketsFile()
         {
-             string filePath = "tickets.xml";
+            string filePath = "tickets.xml";
 
             if (!File.Exists(filePath)) // if doesnt exist create new file
             {
@@ -163,7 +163,7 @@ namespace HelpDesk
                 DateTime.Parse(element.Element("OpenDate").Value),
                 closeDate,
                 assignedWorker,
-                comments 
+                comments
             );
         }
         private Contact ContactFromXML(XElement personElement)
@@ -192,7 +192,7 @@ namespace HelpDesk
         private Employee AssignedWorkerFromXML(XElement assignedWorkerElement)
         {
             if (assignedWorkerElement == null || assignedWorkerElement.Element("Employee") == null)
-                return null; 
+                return null;
 
             XElement employeeElement = assignedWorkerElement.Element("Employee");
             return new Employee(
