@@ -16,6 +16,7 @@ namespace HelpDesk
         {
             InitializeComponent();
             InitializeDataGridView();
+            UpdateDataGridView();
         }
 
         private void InitializeDataGridView()
@@ -25,8 +26,20 @@ namespace HelpDesk
 
             CustomizeDataGridView();
             openTicketsGridView.ColumnHeaderMouseClick += OpenTicketsGridView_ColumnHeaderMouseClick;
+
         }
 
+        private void UpdateDataGridView()
+        {
+            // Fetch the latest tickets from the ticketController
+            var latestTickets = Program.ticketController.GetTickets();
+
+            // Update the BindingList with the latest tickets
+            tickets = new BindingList<Ticket>(latestTickets);
+
+            // Set the DataGridView's data source to the updated BindingList
+            openTicketsGridView.DataSource = tickets;
+        }
         private void CustomizeDataGridView()
         {
 

@@ -136,6 +136,12 @@
     <Compile Include="Ticket.cs" />
     <Compile Include="TicketController.cs" />
     <Compile Include="Types.cs" />
+    <Compile Include="WinUserTicketMenu.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="WinUserTicketMenu.Designer.cs">
+      <DependentUpon>WinUserTicketMenu.cs</DependentUpon>
+    </Compile>
     <Compile Include="WinAdmin.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -226,6 +232,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="WinUserHome.resx">
       <DependentUpon>WinUserHome.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="WinUserTicketMenu.resx">
+      <DependentUpon>WinUserTicketMenu.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="WinUserTicketOpen.resx">
       <DependentUpon>WinUserTicketOpen.cs</DependentUpon>
@@ -319,6 +328,7 @@
     <Content Include="Bunifu\Bunifu.UI.WinForms.BunifuTransition.dll" />
     <Content Include="Bunifu\Bunifu.UI.WinForms.BunifuUserControl.dll" />
     <Content Include="Bunifu\Bunifu.UI.WinForms.Deprecated.dll" />
+    <None Include="Resources\icons8-zurück-48.png" />
     <None Include="Resources\icons8-ticket-löschen-90.png" />
     <None Include="Resources\icons8-ticket-hinzufügen-100.png" />
     <None Include="Resources\icons8-zuhause-100 %281%29.png" />
