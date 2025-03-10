@@ -268,9 +268,10 @@
             this.label2.ForeColor = System.Drawing.SystemColors.HighlightText;
             this.label2.Location = new System.Drawing.Point(52, 133);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(74, 17);
+            this.label2.Size = new System.Drawing.Size(52, 17);
             this.label2.TabIndex = 7;
-            this.label2.Text = "Reference";
+            this.label2.Text = "Device";
+            this.label2.Click += new System.EventHandler(this.label2_Click);
             // 
             // tbReference
             // 
@@ -351,7 +352,6 @@
         private System.Windows.Forms.Label lbTopic;
         private System.Windows.Forms.TextBox tbName;
         private System.Windows.Forms.Label lbName;
-        private System.Windows.Forms.Label label2;
         private System.Windows.Forms.TextBox tbReference;
         private Bunifu.UI.WinForms.BunifuButton.BunifuButton openTicketBtn;
         private System.Windows.Forms.Label lbPriority;
@@ -363,5 +363,6 @@
         private System.Windows.Forms.Label lbType;
         private System.Windows.Forms.ComboBox cbType;
         private System.Windows.Forms.Label lbDetails;
+        public System.Windows.Forms.Label label2;
     }
 }
