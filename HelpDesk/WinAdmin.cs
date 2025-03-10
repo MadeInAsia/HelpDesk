@@ -46,7 +46,6 @@ namespace HelpDesk
 
 
             lblTotalTickets.Text = totalTickets.ToString();
-            lblCompletedPercentage.Text = $"{completionRate:F1}%";
             lblOpenTickets.Text = openTickets.ToString();
             lblInProgressTickets.Text = inProgressTickets.ToString();
             lblHighPriorityTickets.Text = highPriorityTickets.ToString();
@@ -117,13 +116,13 @@ namespace HelpDesk
         private void btnComments_Click(object sender, EventArgs e)
         {
             CloseAllForms();
-            WinAdminMessages.FormBorderStyle = FormBorderStyle.None;
-            WinAdminMessages.TopLevel = false;
-            WinAdminMessages.Dock = DockStyle.None;
-            this.Controls.Add(WinAdminMessages);
-            this.Tag = WinAdminMessages;
-            WinAdminMessages.BringToFront();
-            WinAdminMessages.Show();
+            //WinAdminMessages.FormBorderStyle = FormBorderStyle.None;
+            //WinAdminMessages.TopLevel = false;
+            //WinAdminMessages.Dock = DockStyle.None;
+            //this.Controls.Add(WinAdminMessages);
+            //this.Tag = WinAdminMessages;
+            //WinAdminMessages.BringToFront();
+            //WinAdminMessages.Show();
         }
 
         private void btnStats_Click(object sender, EventArgs e)
@@ -163,6 +162,11 @@ namespace HelpDesk
         }
 
         private void circleProgress_ProgressChanged(object sender, Bunifu.UI.WinForms.BunifuCircleProgress.ProgressChangedEventArgs e)
+        {
+
+        }
+
+        private void TotalTickets_Click(object sender, EventArgs e)
         {
 
         }

@@ -30,16 +30,16 @@
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(WinAdmin));
-            Bunifu.UI.WinForms.BunifuTextBox.StateProperties stateProperties13 = new Bunifu.UI.WinForms.BunifuTextBox.StateProperties();
-            Bunifu.UI.WinForms.BunifuTextBox.StateProperties stateProperties14 = new Bunifu.UI.WinForms.BunifuTextBox.StateProperties();
-            Bunifu.UI.WinForms.BunifuTextBox.StateProperties stateProperties15 = new Bunifu.UI.WinForms.BunifuTextBox.StateProperties();
-            Bunifu.UI.WinForms.BunifuTextBox.StateProperties stateProperties16 = new Bunifu.UI.WinForms.BunifuTextBox.StateProperties();
-            Bunifu.UI.WinForms.BunifuButton.BunifuButton2.BorderEdges borderEdges19 = new Bunifu.UI.WinForms.BunifuButton.BunifuButton2.BorderEdges();
-            Bunifu.UI.WinForms.BunifuButton.BunifuButton2.BorderEdges borderEdges20 = new Bunifu.UI.WinForms.BunifuButton.BunifuButton2.BorderEdges();
-            Bunifu.UI.WinForms.BunifuButton.BunifuButton2.BorderEdges borderEdges21 = new Bunifu.UI.WinForms.BunifuButton.BunifuButton2.BorderEdges();
-            Bunifu.UI.WinForms.BunifuButton.BunifuButton2.BorderEdges borderEdges22 = new Bunifu.UI.WinForms.BunifuButton.BunifuButton2.BorderEdges();
-            Bunifu.UI.WinForms.BunifuButton.BunifuButton2.BorderEdges borderEdges23 = new Bunifu.UI.WinForms.BunifuButton.BunifuButton2.BorderEdges();
-            Bunifu.UI.WinForms.BunifuButton.BunifuButton2.BorderEdges borderEdges24 = new Bunifu.UI.WinForms.BunifuButton.BunifuButton2.BorderEdges();
+            Bunifu.UI.WinForms.BunifuTextBox.StateProperties stateProperties5 = new Bunifu.UI.WinForms.BunifuTextBox.StateProperties();
+            Bunifu.UI.WinForms.BunifuTextBox.StateProperties stateProperties6 = new Bunifu.UI.WinForms.BunifuTextBox.StateProperties();
+            Bunifu.UI.WinForms.BunifuTextBox.StateProperties stateProperties7 = new Bunifu.UI.WinForms.BunifuTextBox.StateProperties();
+            Bunifu.UI.WinForms.BunifuTextBox.StateProperties stateProperties8 = new Bunifu.UI.WinForms.BunifuTextBox.StateProperties();
+            Bunifu.UI.WinForms.BunifuButton.BunifuButton2.BorderEdges borderEdges7 = new Bunifu.UI.WinForms.BunifuButton.BunifuButton2.BorderEdges();
+            Bunifu.UI.WinForms.BunifuButton.BunifuButton2.BorderEdges borderEdges8 = new Bunifu.UI.WinForms.BunifuButton.BunifuButton2.BorderEdges();
+            Bunifu.UI.WinForms.BunifuButton.BunifuButton2.BorderEdges borderEdges9 = new Bunifu.UI.WinForms.BunifuButton.BunifuButton2.BorderEdges();
+            Bunifu.UI.WinForms.BunifuButton.BunifuButton2.BorderEdges borderEdges10 = new Bunifu.UI.WinForms.BunifuButton.BunifuButton2.BorderEdges();
+            Bunifu.UI.WinForms.BunifuButton.BunifuButton2.BorderEdges borderEdges11 = new Bunifu.UI.WinForms.BunifuButton.BunifuButton2.BorderEdges();
+            Bunifu.UI.WinForms.BunifuButton.BunifuButton2.BorderEdges borderEdges12 = new Bunifu.UI.WinForms.BunifuButton.BunifuButton2.BorderEdges();
             this.labelAdmin = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
             this.bunifuPanel9 = new Bunifu.UI.WinForms.BunifuPanel();
@@ -59,7 +59,6 @@
             this.lblHighPriorityTickets = new System.Windows.Forms.Label();
             this.lblInProgressTickets = new System.Windows.Forms.Label();
             this.lblOpenTickets = new System.Windows.Forms.Label();
-            this.lblCompletedPercentage = new System.Windows.Forms.Label();
             this.lblTotalTickets = new System.Windows.Forms.Label();
             this.bunifuPanel2 = new Bunifu.UI.WinForms.BunifuPanel();
             this.bunifuTextBox1 = new Bunifu.UI.WinForms.BunifuTextBox();
@@ -74,11 +73,13 @@
             this.btnHome = new Bunifu.UI.WinForms.BunifuButton.BunifuButton2();
             this.bunifuPanel1 = new Bunifu.UI.WinForms.BunifuPanel();
             this.bunifuPictureBox1 = new Bunifu.UI.WinForms.BunifuPictureBox();
+            this.TotalTickets = new System.Windows.Forms.Label();
             this.bunifuPanel9.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.panel2.SuspendLayout();
             this.bunifuPanel7.SuspendLayout();
             this.bunifuPanel5.SuspendLayout();
+            this.bunifuPanel4.SuspendLayout();
             this.bunifuPanel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.bunifuPictureBox1)).BeginInit();
             this.SuspendLayout();
@@ -188,7 +189,7 @@
             this.lblRadialSubtitle.AutoSize = true;
             this.lblRadialSubtitle.BackColor = System.Drawing.Color.Transparent;
             this.lblRadialSubtitle.Font = new System.Drawing.Font("Gadugi", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblRadialSubtitle.Location = new System.Drawing.Point(26, 134);
+            this.lblRadialSubtitle.Location = new System.Drawing.Point(29, 134);
             this.lblRadialSubtitle.Name = "lblRadialSubtitle";
             this.lblRadialSubtitle.Size = new System.Drawing.Size(121, 19);
             this.lblRadialSubtitle.TabIndex = 18;
@@ -317,6 +318,8 @@
             this.bunifuPanel4.BorderColor = System.Drawing.Color.Transparent;
             this.bunifuPanel4.BorderRadius = 25;
             this.bunifuPanel4.BorderThickness = 1;
+            this.bunifuPanel4.Controls.Add(this.TotalTickets);
+            this.bunifuPanel4.Controls.Add(this.lblTotalTickets);
             this.bunifuPanel4.Location = new System.Drawing.Point(11, 485);
             this.bunifuPanel4.Name = "bunifuPanel4";
             this.bunifuPanel4.ShowBorders = true;
@@ -334,8 +337,6 @@
             this.bunifuPanel3.Controls.Add(this.lblHighPriorityTickets);
             this.bunifuPanel3.Controls.Add(this.lblInProgressTickets);
             this.bunifuPanel3.Controls.Add(this.lblOpenTickets);
-            this.bunifuPanel3.Controls.Add(this.lblCompletedPercentage);
-            this.bunifuPanel3.Controls.Add(this.lblTotalTickets);
             this.bunifuPanel3.Location = new System.Drawing.Point(11, 184);
             this.bunifuPanel3.Name = "bunifuPanel3";
             this.bunifuPanel3.ShowBorders = true;
@@ -345,7 +346,7 @@
             // lblHighPriorityTickets
             // 
             this.lblHighPriorityTickets.AutoSize = true;
-            this.lblHighPriorityTickets.Location = new System.Drawing.Point(502, 140);
+            this.lblHighPriorityTickets.Location = new System.Drawing.Point(51, 106);
             this.lblHighPriorityTickets.Name = "lblHighPriorityTickets";
             this.lblHighPriorityTickets.Size = new System.Drawing.Size(98, 13);
             this.lblHighPriorityTickets.TabIndex = 4;
@@ -354,7 +355,7 @@
             // lblInProgressTickets
             // 
             this.lblInProgressTickets.AutoSize = true;
-            this.lblInProgressTickets.Location = new System.Drawing.Point(362, 197);
+            this.lblInProgressTickets.Location = new System.Drawing.Point(51, 52);
             this.lblInProgressTickets.Name = "lblInProgressTickets";
             this.lblInProgressTickets.Size = new System.Drawing.Size(98, 13);
             this.lblInProgressTickets.TabIndex = 3;
@@ -363,29 +364,23 @@
             // lblOpenTickets
             // 
             this.lblOpenTickets.AutoSize = true;
-            this.lblOpenTickets.Location = new System.Drawing.Point(362, 160);
+            this.lblOpenTickets.Location = new System.Drawing.Point(51, 160);
             this.lblOpenTickets.Name = "lblOpenTickets";
             this.lblOpenTickets.Size = new System.Drawing.Size(71, 13);
             this.lblOpenTickets.TabIndex = 2;
             this.lblOpenTickets.Text = "Open Tickets";
             // 
-            // lblCompletedPercentage
-            // 
-            this.lblCompletedPercentage.AutoSize = true;
-            this.lblCompletedPercentage.Location = new System.Drawing.Point(362, 125);
-            this.lblCompletedPercentage.Name = "lblCompletedPercentage";
-            this.lblCompletedPercentage.Size = new System.Drawing.Size(115, 13);
-            this.lblCompletedPercentage.TabIndex = 1;
-            this.lblCompletedPercentage.Text = "Completed Percentage";
-            // 
             // lblTotalTickets
             // 
             this.lblTotalTickets.AutoSize = true;
-            this.lblTotalTickets.Location = new System.Drawing.Point(362, 29);
+            this.lblTotalTickets.BackColor = System.Drawing.Color.Transparent;
+            this.lblTotalTickets.Font = new System.Drawing.Font("Gadugi", 48F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblTotalTickets.ForeColor = System.Drawing.SystemColors.ControlDark;
+            this.lblTotalTickets.Location = new System.Drawing.Point(53, 38);
             this.lblTotalTickets.Name = "lblTotalTickets";
-            this.lblTotalTickets.Size = new System.Drawing.Size(69, 13);
+            this.lblTotalTickets.Size = new System.Drawing.Size(71, 77);
             this.lblTotalTickets.TabIndex = 0;
-            this.lblTotalTickets.Text = "Total Tickets";
+            this.lblTotalTickets.Text = "T";
             // 
             // bunifuPanel2
             // 
@@ -437,26 +432,26 @@
             this.bunifuTextBox1.Modified = false;
             this.bunifuTextBox1.Multiline = false;
             this.bunifuTextBox1.Name = "bunifuTextBox1";
-            stateProperties13.BorderColor = System.Drawing.Color.White;
-            stateProperties13.FillColor = System.Drawing.Color.Empty;
-            stateProperties13.ForeColor = System.Drawing.Color.Empty;
-            stateProperties13.PlaceholderForeColor = System.Drawing.Color.Empty;
-            this.bunifuTextBox1.OnActiveState = stateProperties13;
-            stateProperties14.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(204)))), ((int)(((byte)(204)))), ((int)(((byte)(204)))));
-            stateProperties14.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(240)))), ((int)(((byte)(240)))));
-            stateProperties14.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
-            stateProperties14.PlaceholderForeColor = System.Drawing.Color.DarkGray;
-            this.bunifuTextBox1.OnDisabledState = stateProperties14;
-            stateProperties15.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            stateProperties15.FillColor = System.Drawing.Color.Empty;
-            stateProperties15.ForeColor = System.Drawing.Color.Empty;
-            stateProperties15.PlaceholderForeColor = System.Drawing.Color.Empty;
-            this.bunifuTextBox1.OnHoverState = stateProperties15;
-            stateProperties16.BorderColor = System.Drawing.Color.Silver;
-            stateProperties16.FillColor = System.Drawing.Color.White;
-            stateProperties16.ForeColor = System.Drawing.Color.Empty;
-            stateProperties16.PlaceholderForeColor = System.Drawing.Color.Empty;
-            this.bunifuTextBox1.OnIdleState = stateProperties16;
+            stateProperties5.BorderColor = System.Drawing.Color.White;
+            stateProperties5.FillColor = System.Drawing.Color.Empty;
+            stateProperties5.ForeColor = System.Drawing.Color.Empty;
+            stateProperties5.PlaceholderForeColor = System.Drawing.Color.Empty;
+            this.bunifuTextBox1.OnActiveState = stateProperties5;
+            stateProperties6.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(204)))), ((int)(((byte)(204)))), ((int)(((byte)(204)))));
+            stateProperties6.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(240)))), ((int)(((byte)(240)))));
+            stateProperties6.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
+            stateProperties6.PlaceholderForeColor = System.Drawing.Color.DarkGray;
+            this.bunifuTextBox1.OnDisabledState = stateProperties6;
+            stateProperties7.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            stateProperties7.FillColor = System.Drawing.Color.Empty;
+            stateProperties7.ForeColor = System.Drawing.Color.Empty;
+            stateProperties7.PlaceholderForeColor = System.Drawing.Color.Empty;
+            this.bunifuTextBox1.OnHoverState = stateProperties7;
+            stateProperties8.BorderColor = System.Drawing.Color.Silver;
+            stateProperties8.FillColor = System.Drawing.Color.White;
+            stateProperties8.ForeColor = System.Drawing.Color.Empty;
+            stateProperties8.PlaceholderForeColor = System.Drawing.Color.Empty;
+            this.bunifuTextBox1.OnIdleState = stateProperties8;
             this.bunifuTextBox1.Padding = new System.Windows.Forms.Padding(3);
             this.bunifuTextBox1.PasswordChar = '\0';
             this.bunifuTextBox1.PlaceholderForeColor = System.Drawing.Color.Silver;
@@ -532,11 +527,11 @@
             this.bunifuButton212.ColorContrastOnClick = 45;
             this.bunifuButton212.ColorContrastOnHover = 45;
             this.bunifuButton212.Cursor = System.Windows.Forms.Cursors.Hand;
-            borderEdges19.BottomLeft = true;
-            borderEdges19.BottomRight = true;
-            borderEdges19.TopLeft = true;
-            borderEdges19.TopRight = true;
-            this.bunifuButton212.CustomizableEdges = borderEdges19;
+            borderEdges7.BottomLeft = true;
+            borderEdges7.BottomRight = true;
+            borderEdges7.TopLeft = true;
+            borderEdges7.TopRight = true;
+            this.bunifuButton212.CustomizableEdges = borderEdges7;
             this.bunifuButton212.DialogResult = System.Windows.Forms.DialogResult.None;
             this.bunifuButton212.DisabledBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(191)))), ((int)(((byte)(191)))), ((int)(((byte)(191)))));
             this.bunifuButton212.DisabledFillColor = System.Drawing.Color.FromArgb(((int)(((byte)(204)))), ((int)(((byte)(204)))), ((int)(((byte)(204)))));
@@ -621,11 +616,11 @@
             this.btnStats.ColorContrastOnClick = 45;
             this.btnStats.ColorContrastOnHover = 45;
             this.btnStats.Cursor = System.Windows.Forms.Cursors.Hand;
-            borderEdges20.BottomLeft = true;
-            borderEdges20.BottomRight = true;
-            borderEdges20.TopLeft = true;
-            borderEdges20.TopRight = true;
-            this.btnStats.CustomizableEdges = borderEdges20;
+            borderEdges8.BottomLeft = true;
+            borderEdges8.BottomRight = true;
+            borderEdges8.TopLeft = true;
+            borderEdges8.TopRight = true;
+            this.btnStats.CustomizableEdges = borderEdges8;
             this.btnStats.DialogResult = System.Windows.Forms.DialogResult.None;
             this.btnStats.DisabledBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(191)))), ((int)(((byte)(191)))), ((int)(((byte)(191)))));
             this.btnStats.DisabledFillColor = System.Drawing.Color.FromArgb(((int)(((byte)(204)))), ((int)(((byte)(204)))), ((int)(((byte)(204)))));
@@ -711,11 +706,11 @@
             this.btnInfo.ColorContrastOnClick = 45;
             this.btnInfo.ColorContrastOnHover = 45;
             this.btnInfo.Cursor = System.Windows.Forms.Cursors.Hand;
-            borderEdges21.BottomLeft = true;
-            borderEdges21.BottomRight = true;
-            borderEdges21.TopLeft = true;
-            borderEdges21.TopRight = true;
-            this.btnInfo.CustomizableEdges = borderEdges21;
+            borderEdges9.BottomLeft = true;
+            borderEdges9.BottomRight = true;
+            borderEdges9.TopLeft = true;
+            borderEdges9.TopRight = true;
+            this.btnInfo.CustomizableEdges = borderEdges9;
             this.btnInfo.DialogResult = System.Windows.Forms.DialogResult.None;
             this.btnInfo.DisabledBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(191)))), ((int)(((byte)(191)))), ((int)(((byte)(191)))));
             this.btnInfo.DisabledFillColor = System.Drawing.Color.FromArgb(((int)(((byte)(204)))), ((int)(((byte)(204)))), ((int)(((byte)(204)))));
@@ -800,11 +795,11 @@
             this.btnComment.ColorContrastOnClick = 45;
             this.btnComment.ColorContrastOnHover = 45;
             this.btnComment.Cursor = System.Windows.Forms.Cursors.Hand;
-            borderEdges22.BottomLeft = true;
-            borderEdges22.BottomRight = true;
-            borderEdges22.TopLeft = true;
-            borderEdges22.TopRight = true;
-            this.btnComment.CustomizableEdges = borderEdges22;
+            borderEdges10.BottomLeft = true;
+            borderEdges10.BottomRight = true;
+            borderEdges10.TopLeft = true;
+            borderEdges10.TopRight = true;
+            this.btnComment.CustomizableEdges = borderEdges10;
             this.btnComment.DialogResult = System.Windows.Forms.DialogResult.None;
             this.btnComment.DisabledBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(191)))), ((int)(((byte)(191)))), ((int)(((byte)(191)))));
             this.btnComment.DisabledFillColor = System.Drawing.Color.FromArgb(((int)(((byte)(204)))), ((int)(((byte)(204)))), ((int)(((byte)(204)))));
@@ -890,11 +885,11 @@
             this.btnTickets.ColorContrastOnClick = 45;
             this.btnTickets.ColorContrastOnHover = 45;
             this.btnTickets.Cursor = System.Windows.Forms.Cursors.Hand;
-            borderEdges23.BottomLeft = true;
-            borderEdges23.BottomRight = true;
-            borderEdges23.TopLeft = true;
-            borderEdges23.TopRight = true;
-            this.btnTickets.CustomizableEdges = borderEdges23;
+            borderEdges11.BottomLeft = true;
+            borderEdges11.BottomRight = true;
+            borderEdges11.TopLeft = true;
+            borderEdges11.TopRight = true;
+            this.btnTickets.CustomizableEdges = borderEdges11;
             this.btnTickets.DialogResult = System.Windows.Forms.DialogResult.None;
             this.btnTickets.DisabledBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(191)))), ((int)(((byte)(191)))), ((int)(((byte)(191)))));
             this.btnTickets.DisabledFillColor = System.Drawing.Color.FromArgb(((int)(((byte)(204)))), ((int)(((byte)(204)))), ((int)(((byte)(204)))));
@@ -980,11 +975,11 @@
             this.btnHome.ColorContrastOnClick = 45;
             this.btnHome.ColorContrastOnHover = 45;
             this.btnHome.Cursor = System.Windows.Forms.Cursors.Hand;
-            borderEdges24.BottomLeft = true;
-            borderEdges24.BottomRight = true;
-            borderEdges24.TopLeft = true;
-            borderEdges24.TopRight = true;
-            this.btnHome.CustomizableEdges = borderEdges24;
+            borderEdges12.BottomLeft = true;
+            borderEdges12.BottomRight = true;
+            borderEdges12.TopLeft = true;
+            borderEdges12.TopRight = true;
+            this.btnHome.CustomizableEdges = borderEdges12;
             this.btnHome.DialogResult = System.Windows.Forms.DialogResult.None;
             this.btnHome.DisabledBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(191)))), ((int)(((byte)(191)))), ((int)(((byte)(191)))));
             this.btnHome.DisabledFillColor = System.Drawing.Color.FromArgb(((int)(((byte)(204)))), ((int)(((byte)(204)))), ((int)(((byte)(204)))));
@@ -1081,6 +1076,19 @@
             this.bunifuPictureBox1.TabStop = false;
             this.bunifuPictureBox1.Type = Bunifu.UI.WinForms.BunifuPictureBox.Types.Circle;
             // 
+            // TotalTickets
+            // 
+            this.TotalTickets.AutoSize = true;
+            this.TotalTickets.BackColor = System.Drawing.Color.Transparent;
+            this.TotalTickets.Font = new System.Drawing.Font("Gadugi", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.TotalTickets.Location = new System.Drawing.Point(41, 134);
+            this.TotalTickets.Name = "TotalTickets";
+            this.TotalTickets.Size = new System.Drawing.Size(92, 19);
+            this.TotalTickets.TabIndex = 18;
+            this.TotalTickets.Text = "Total Tickets";
+            this.TotalTickets.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.TotalTickets.Click += new System.EventHandler(this.TotalTickets_Click);
+            // 
             // WinAdmin
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -1113,6 +1121,8 @@
             this.bunifuPanel7.PerformLayout();
             this.bunifuPanel5.ResumeLayout(false);
             this.bunifuPanel5.PerformLayout();
+            this.bunifuPanel4.ResumeLayout(false);
+            this.bunifuPanel4.PerformLayout();
             this.bunifuPanel3.ResumeLayout(false);
             this.bunifuPanel3.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.bunifuPictureBox1)).EndInit();
@@ -1153,9 +1163,9 @@
         private System.Windows.Forms.Label lblTotalTickets;
         private System.Windows.Forms.Label lblInProgressTickets;
         private System.Windows.Forms.Label lblOpenTickets;
-        private System.Windows.Forms.Label lblCompletedPercentage;
         private System.Windows.Forms.Label lblHighPriorityTickets;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label lblRadialSubtitle;
+        private System.Windows.Forms.Label TotalTickets;
     }
 }
