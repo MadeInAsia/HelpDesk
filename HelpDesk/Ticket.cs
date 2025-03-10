@@ -40,7 +40,9 @@ namespace HelpDesk
             AssignedWorker = assignedWorker;
             Comments = new List<string>();
 
-            LogComment("Ticket created by " + person.Name + person.Nachname);
+            LogComment("Ticket created by " + person.Name + person.Nachname); 
+
+            // change this so that the listbox only shows the ticket instance once, not from user and admin at the same time only one and other or so 
         }
 
         private void LogComment(string message)
@@ -49,13 +51,13 @@ namespace HelpDesk
             Comments.Add(timestamp + " : " + message);
         }
 
-        private void AssignWorker(Employee employee)
+        public void AssignWorker(Employee employee)
         {
             AssignedWorker = employee;
             LogComment("Assigned to " + employee.Name + " " + employee.Nachname);
         }
 
-        private void UpdateStatus(TicketStatus newStatus)
+        public void UpdateStatus(TicketStatus newStatus)
         {
             Status = newStatus;
             LogComment("Status changed to " + newStatus);

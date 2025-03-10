@@ -36,35 +36,85 @@ namespace HelpDesk
         {
             // Update ticket
         }
+
+        public void AssignWorkerToTicket(string ticketID, Employee worker)
+        {
+            Ticket ticket = tickets.FirstOrDefault(t => t.TicketID == ticketID);
+            if (ticket != null)
+            {
+                ticket.AssignWorker(worker);
+                SaveTicketsFile();
+            }
+        }
+        public void UpdateTicketStatus(string ticketID, TicketStatus newStatus)
+        {
+            foreach (Ticket ticket in tickets)
+            {
+                if (ticket.TicketID == ticketID)
+                {
+                    ticket.UpdateStatus(newStatus);
+                    SaveTicketsFile();
+                    return;
+                }
+            }
+        }
+
         public void SaveTicketsFile()
         {
-            string filePath =  "tickets.xml";
+            string filePath = "tickets.xml";
+            XElement root = new XElement("Tickets"); // root xml element
+            foreach (Ticket ticket in tickets)
+            { 
+                XElement ticketElement = new XElement("Ticket",
+                    new XElement("TicketID", ticket.TicketID),
+                    new XElement("Contact",
+                        new XElement("Name", ticket.Person.Name),
+                        new XElement("Nachname", ticket.Person.Nachname),
+                        new XElement("Email", ticket.Person.Email)
+                    ),
+                    new XElement("Priority", ticket.Priority.ToString()),
+                    new XElement("Type", ticket.Type.ToString()),
+                    new XElement("Status", ticket.Status.ToString()),
+                    new XElement("Topic", ticket.Topic),
+                    new XElement("Reference", ticket.Reference),
+                    new XElement("Details", ticket.Details),
+                    new XElement("OpenDate", ticket.OpenDate),
+                    new XElement("CloseDate", ticket.CloseDate != null ? ticket.CloseDate.ToString() : "")
+                );
 
-            XDocument doc = new XDocument(
-                   new XElement("Tickets", tickets.ConvertAll(ticket =>
-                       new XElement("Ticket",
-                           new XElement("TicketID", ticket.TicketID),
-                           new XElement("Contact",
-                               new XElement("Name", ticket.Person.Name),
-                               new XElement("Nachname", ticket.Person.Nachname),
-                               new XElement("Email", ticket.Person.Email)),
+                // Worker 
+                XElement assignedWorkerElement = new XElement("AssignedWorker");
+                if (ticket.AssignedWorker != null)
+                {
+                    assignedWorkerElement = new XElement("AssignedWorker",
+                        new XElement("Employee",
+                            new XElement("ID", ticket.AssignedWorker.ID),
+                            new XElement("Name", ticket.AssignedWorker.Name),
+                            new XElement("Nachname", ticket.AssignedWorker.Nachname),
+                            new XElement("Department", ticket.AssignedWorker.Department)
+                        )
+                    );
+                }
+                else
+                {
+                    assignedWorkerElement = new XElement("AssignedWorker", "Unassigned");
+                }
+                ticketElement.Add(assignedWorkerElement);
 
-                           new XElement("Priority", ticket.Priority.ToString()),
-                           new XElement("Type", ticket.Type.ToString()),
-                           new XElement("Topic", ticket.Topic),
-                           new XElement("Reference", ticket.Reference),
-                           new XElement("Details", ticket.Details),
-                           new XElement("Status", ticket.Status.ToString()),
-                           new XElement("OpenDate", ticket.OpenDate),
-                           new XElement("CloseDate", ticket.CloseDate?.ToString() ?? ""),
-                           new XElement("AssignedWorker", ticket.AssignedWorker)
-                       )
-                   ))
-               );
+                XElement commentsElement = new XElement("Comments");
+                foreach (string comment in ticket.Comments)
+                {
+                    commentsElement.Add(new XElement("Comment", comment));
+                }
+                ticketElement.Add(commentsElement);
+
+                // Add ticket XML to root
+                root.Add(ticketElement);
+            }
+
+            // Save the document
+            XDocument doc = new XDocument(root);
             doc.Save(filePath);
-
-            // Confirm save location
-            MessageBox.Show($"Tickets saved successfully to: {filePath}", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
 
         public void LoadTicketsFile()
@@ -90,7 +140,7 @@ namespace HelpDesk
             Contact person = ContactFromXML(element.Element("Contact"));
             if (person == null)
             {
-                person = new Contact("Unknown", "Unknown", "unknown@unknown.com"); // Assign default 
+                person = new Contact("Unknown", "Unknown", "unknown@unknown.com"); 
              }
             Employee assignedWorker = AssignedWorkerFromXML(element.Element("AssignedWorker"));
             DateTime? closeDate = CloseDateFromXML(element.Element("CloseDate"));
@@ -99,17 +149,26 @@ namespace HelpDesk
                 person,
                 (TicketPriority)Enum.Parse(typeof(TicketPriority), element.Element("Priority").Value),
                 (TicketType)Enum.Parse(typeof(TicketType), element.Element("Type").Value),
-                (TicketStatus)Enum.Parse(typeof(TicketStatus), element.Element("Status").Value),
+                (TicketStatus)Enum.Parse(typeof(TicketStatus), element.Element("Status").Value), // needed ?
                 element.Element("Topic").Value,
                 element.Element("Reference").Value,
-                element.Element("Details").Value
+                element.Element("Details").Value,
+                assignedWorker
             )
             {
                 TicketID = element.Element("TicketID").Value,
                 OpenDate = DateTime.Parse(element.Element("OpenDate").Value),
-                CloseDate = closeDate,
-                AssignedWorker = assignedWorker
+                CloseDate = closeDate
             };
+
+            XElement commentsElement = element.Element("Comments");
+            if (commentsElement != null)
+            {
+                foreach (XElement commentElement in commentsElement.Elements("Comment"))
+                {
+                    ticket.Comments.Add(commentElement.Value);
+                }
+            }
 
             return ticket;
         }
@@ -189,6 +248,9 @@ namespace HelpDesk
             return tickets.Where(ticket => ticket.Person.Email == contactEmail).ToList();
         }
 
-
+        internal IEnumerable<string> GetComments()
+        {
+            return tickets.SelectMany(ticket => ticket.Comments);
+        }
     }
 }
