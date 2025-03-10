@@ -28,33 +28,41 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.lbComments = new System.Windows.Forms.ListBox();
+            this.flpComments = new System.Windows.Forms.FlowLayoutPanel();
             this.SuspendLayout();
             // 
-            // lbComments
+            // flpComments
             // 
-            this.lbComments.FormattingEnabled = true;
-            this.lbComments.Location = new System.Drawing.Point(352, 124);
-            this.lbComments.Name = "lbComments";
-            this.lbComments.Size = new System.Drawing.Size(431, 316);
-            this.lbComments.TabIndex = 0;
+            this.flpComments.AutoScroll = true;
+            this.flpComments.AutoSize = true;
+            this.flpComments.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(191)))), ((int)(((byte)(245)))), ((int)(((byte)(253)))));
+            this.flpComments.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.flpComments.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.flpComments.FlowDirection = System.Windows.Forms.FlowDirection.TopDown;
+            this.flpComments.Location = new System.Drawing.Point(0, 0);
+            this.flpComments.Name = "flpComments";
+            this.flpComments.Size = new System.Drawing.Size(477, 499);
+            this.flpComments.TabIndex = 0;
+            this.flpComments.WrapContents = false;
             // 
             // WinAdminComments
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1054, 648);
-            this.Controls.Add(this.lbComments);
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.ClientSize = new System.Drawing.Size(477, 499);
+            this.Controls.Add(this.flpComments);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
             this.Location = new System.Drawing.Point(215, 66);
             this.Name = "WinAdminComments";
-            this.Text = "WinAdminMessages";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.Text = "TICKET UPDATES";
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
         #endregion
 
-        private System.Windows.Forms.ListBox lbComments;
+        private System.Windows.Forms.FlowLayoutPanel flpComments;
     }
 }

@@ -138,39 +138,33 @@ namespace HelpDesk
         private Ticket CreateTicketFromXML(XElement element)
         {
             Contact person = ContactFromXML(element.Element("Contact"));
-            if (person == null)
-            {
-                person = new Contact("Unknown", "Unknown", "unknown@unknown.com"); 
-             }
             Employee assignedWorker = AssignedWorkerFromXML(element.Element("AssignedWorker"));
             DateTime? closeDate = CloseDateFromXML(element.Element("CloseDate"));
 
-            Ticket ticket = new Ticket(
-                person,
-                (TicketPriority)Enum.Parse(typeof(TicketPriority), element.Element("Priority").Value),
-                (TicketType)Enum.Parse(typeof(TicketType), element.Element("Type").Value),
-                (TicketStatus)Enum.Parse(typeof(TicketStatus), element.Element("Status").Value), // needed ?
-                element.Element("Topic").Value,
-                element.Element("Reference").Value,
-                element.Element("Details").Value,
-                assignedWorker
-            )
-            {
-                TicketID = element.Element("TicketID").Value,
-                OpenDate = DateTime.Parse(element.Element("OpenDate").Value),
-                CloseDate = closeDate
-            };
-
+            List<string> comments = new List<string>();  //  Load existing comments from XML
             XElement commentsElement = element.Element("Comments");
             if (commentsElement != null)
             {
                 foreach (XElement commentElement in commentsElement.Elements("Comment"))
                 {
-                    ticket.Comments.Add(commentElement.Value);
+                    comments.Add(commentElement.Value);
                 }
             }
 
-            return ticket;
+            return new Ticket(
+                element.Element("TicketID").Value,
+                person,
+                (TicketPriority)Enum.Parse(typeof(TicketPriority), element.Element("Priority").Value),
+                (TicketType)Enum.Parse(typeof(TicketType), element.Element("Type").Value),
+                element.Element("Topic").Value,
+                element.Element("Reference").Value,
+                element.Element("Details").Value,
+                (TicketStatus)Enum.Parse(typeof(TicketStatus), element.Element("Status").Value),
+                DateTime.Parse(element.Element("OpenDate").Value),
+                closeDate,
+                assignedWorker,
+                comments 
+            );
         }
         private Contact ContactFromXML(XElement personElement)
         {

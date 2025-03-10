@@ -33,6 +33,7 @@
             this.label1 = new System.Windows.Forms.Label();
             this.listView1 = new System.Windows.Forms.ListView();
             this.pnlTicketDetails = new System.Windows.Forms.Panel();
+            this.button1 = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // label1
@@ -74,12 +75,26 @@
             this.pnlTicketDetails.Size = new System.Drawing.Size(410, 457);
             this.pnlTicketDetails.TabIndex = 2;
             // 
+            // button1
+            // 
+            this.button1.BackColor = System.Drawing.Color.White;
+            this.button1.Font = new System.Drawing.Font("Gadugi", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button1.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.button1.Location = new System.Drawing.Point(233, 582);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(168, 35);
+            this.button1.TabIndex = 3;
+            this.button1.Text = "View Ticket Updates";
+            this.button1.UseVisualStyleBackColor = false;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
             // WinAdminTickets
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Teal;
             this.ClientSize = new System.Drawing.Size(1054, 648);
+            this.Controls.Add(this.button1);
             this.Controls.Add(this.pnlTicketDetails);
             this.Controls.Add(this.listView1);
             this.Controls.Add(this.label1);
@@ -99,5 +114,6 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.ListView listView1;
         private System.Windows.Forms.Panel pnlTicketDetails;
+        private System.Windows.Forms.Button button1;
     }
 }

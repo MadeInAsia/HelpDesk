@@ -93,5 +93,33 @@ namespace HelpDesk
             pnlTicketDetails.Controls.Add(ticketDetailsForm);
             ticketDetailsForm.Show();
         }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            if (listView1.SelectedItems.Count == 0)
+            {
+                MessageBox.Show("Please select a ticket first.", "No Ticket Selected", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+
+            string selectedTicketID = listView1.SelectedItems[0].Text; // Get ticket ID
+
+            // Find selected ticket
+            Ticket selectedTicket = null;
+            foreach (Ticket ticket in Program.ticketController.GetTickets())
+            {
+                if (ticket.TicketID == selectedTicketID)
+                {
+                    selectedTicket = ticket;
+                    break;
+                }
+            }
+
+            if (selectedTicket != null)
+            {
+                WinAdminComments commentsForm = new WinAdminComments(selectedTicket);
+                commentsForm.ShowDialog();
+            }
+        }
     }
 }

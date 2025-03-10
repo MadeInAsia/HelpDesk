@@ -69,7 +69,6 @@ namespace HelpDesk
         private void btnComments_Click(object sender, EventArgs e)
         {
             CloseAllForms();
-            WinAdminMessages = new WinAdminComments();
             WinAdminMessages.FormBorderStyle = FormBorderStyle.None;
             WinAdminMessages.TopLevel = false;
             WinAdminMessages.Dock = DockStyle.None;

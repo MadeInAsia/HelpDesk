@@ -115,7 +115,7 @@
             this.openTicketsGridView.EnableHeadersVisualStyles = false;
             this.openTicketsGridView.GridColor = System.Drawing.Color.White;
             this.openTicketsGridView.HeaderBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.openTicketsGridView.HeaderBgColor = System.Drawing.Color.Empty;
+            this.openTicketsGridView.HeaderBackColor = System.Drawing.Color.Empty;
             this.openTicketsGridView.HeaderForeColor = System.Drawing.Color.IndianRed;
             this.openTicketsGridView.Location = new System.Drawing.Point(12, 29);
             this.openTicketsGridView.Name = "openTicketsGridView";
