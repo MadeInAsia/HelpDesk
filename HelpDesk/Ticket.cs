@@ -22,6 +22,8 @@ namespace HelpDesk
         public DateTime OpenDate { get; set; }
         public DateTime? CloseDate { get; set; }
         public Employee AssignedWorker { get; set; }
+        public List<String> Comments { get; private set; } //List of status updates
+
 
         public Ticket(Contact person, TicketPriority priority, TicketType type, TicketStatus status, string topic, string reference, string details, Employee assignedWorker = null)
         {
@@ -32,12 +34,38 @@ namespace HelpDesk
             Topic = topic;
             Reference = reference;
             Details = details;
-            Status = TicketStatus.Open;
+            Status = status;
             OpenDate = DateTime.Now;
             CloseDate = null;
             AssignedWorker = assignedWorker;
+            Comments = new List<string>();
+
+            LogComment("Ticket created by " + person.Name + person.Nachname);
         }
-        
+
+        private void LogComment(string message)
+        {
+            string timestamp = DateTime.Now.ToString();
+            Comments.Add(timestamp + " : " + message);
+        }
+
+        private void AssignWorker(Employee employee)
+        {
+            AssignedWorker = employee;
+            LogComment("Assigned to " + employee.Name + " " + employee.Nachname);
+        }
+
+        private void UpdateStatus(TicketStatus newStatus)
+        {
+            Status = newStatus;
+            LogComment("Status changed to " + newStatus);
+
+            if (newStatus == TicketStatus.Closed)
+            {
+                CloseDate = DateTime.Now;
+            }
+        }
+
         public enum TicketStatus
         {
             Open,
