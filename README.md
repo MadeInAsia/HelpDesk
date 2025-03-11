@@ -9,8 +9,7 @@
 - [ ] (maybe log in)  
 - [ ] etc. :tada:
 
-===========================================
-Whats next / needs fixing:
+## Whats next / needs fixing:
 
 - login try catch (no space bar etc)
 - user and admin as individual objects, database n - 1 connection
@@ -22,5 +21,4 @@ Whats next / needs fixing:
 - switch between user and admin views without closing programm 
 - SLA's
 - SQL lite
-======================
-kein plan :)
+
