@@ -163,9 +163,9 @@ namespace HelpDesk
 
             WinUserTicketMenu ticketMenuForm = new WinUserTicketMenu(selectedTicket, this);
 
-            ticketMenuForm.TopLevel = false; 
-            ticketMenuForm.FormBorderStyle = FormBorderStyle.None; 
-            ticketMenuForm.Dock = DockStyle.Fill;  
+            ticketMenuForm.TopLevel = false;  // Make it behave as a user control
+            ticketMenuForm.FormBorderStyle = FormBorderStyle.None; // Remove border
+            ticketMenuForm.Dock = DockStyle.Fill;  // Make it fill the panel
 
     
             bunifuPanel1.Controls.Add(ticketMenuForm);

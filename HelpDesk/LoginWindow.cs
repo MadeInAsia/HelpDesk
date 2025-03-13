@@ -13,9 +13,8 @@ namespace HelpDesk
 {
     public partial class LoginWindow : Form
     {
-   
         private bool isUsernameCleared = false;
-        private bool isPasswordCleared = false;   
+        private bool isPasswordCleared = false;
 
         public LoginWindow()
         {
@@ -25,6 +24,9 @@ namespace HelpDesk
             UsernameText.Enter += UsernameText_Enter;
             PwdText.Enter += PwdText_Enter;
 
+            // Add KeyDown event handlers
+            UsernameText.KeyDown += UsernameText_KeyDown;
+            PwdText.KeyDown += PwdText_KeyDown;
         }
 
         private void LoginWindow_Load(object sender, EventArgs e)
@@ -37,7 +39,6 @@ namespace HelpDesk
 
         }
 
-
         private void flowLayoutPanel1_Paint(object sender, PaintEventArgs e)
         {
 
@@ -48,6 +49,7 @@ namespace HelpDesk
 
         }
 
+ 
         private void pictureBox1_Click_1(object sender, EventArgs e)
         {
             string username = UsernameText.Text.Trim().ToLower(); // Normalize input
@@ -96,13 +98,30 @@ namespace HelpDesk
             }
         }
 
-
         private void PwdText_Enter(object sender, EventArgs e)
         {
             if (!isPasswordCleared)
             {
                 PwdText.Text = string.Empty;
                 isPasswordCleared = true;
+            }
+        }
+
+        // Handle KeyDown event for UsernameText (enter key pressed)
+        private void UsernameText_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter) // Check if Enter key is pressed
+            {
+                pictureBox1_Click_1(sender, e); // Trigger the same function as clicking pictureBox1
+            }
+        }
+
+        // Handle KeyDown event for PwdText (enter key pressed)
+        private void PwdText_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter) // Check if Enter key is pressed
+            {
+                pictureBox1_Click_1(sender, e); // Trigger the same function as clicking pictureBox1
             }
         }
     }

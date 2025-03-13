@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Windows.Forms;
+using Bunifu.UI.WinForms;
 
 namespace HelpDesk
 {
@@ -25,12 +26,12 @@ namespace HelpDesk
                 lbType.Text = $"Type: {selectedTicket.Type}";
                 lbDevice.Text = $"Device: {selectedTicket.Reference}";
                 lbWorker.Text = $"Worker: {lbWorker.Text}";
-                lbDate.Text = selectedTicket.OpenDate.ToString("MM/dd/yyyy");
+                lbDate.Text = $"Opening Date: {selectedTicket.OpenDate.ToString("MM/dd/yyyy")}";
 
 
-                ticketInfo.Text = selectedTicket.Details;
+                textBox4.Text = selectedTicket.Details;
 
-                ticketInfo.Enabled = false;
+                textBox4.Enabled = false;
                 tbDetails.Enabled = false;
             }
             else
@@ -40,19 +41,6 @@ namespace HelpDesk
         }
 
 
-        private void backBtn_Click_1(object sender, EventArgs e)
-        {
-            Console.WriteLine("Click");
-
-            // Show the parent form again
-            if (parentForm != null)
-            {
-                parentForm.Show();
-            }
-
-            // Close this menu
-            this.Close();
-        }
 
     }
 }

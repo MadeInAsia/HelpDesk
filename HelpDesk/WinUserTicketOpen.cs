@@ -20,8 +20,10 @@ namespace HelpDesk
         {
             InitializeComponent();
 
-            cbDevice.Items.Add("Select");
-            cbDevice.Items.Add("was soll hier rein");
+            cbDevice.Items.Add("PC");
+            cbDevice.Items.Add("Server");
+            cbDevice.Items.Add("Android");
+            cbDevice.Items.Add("IOS");
             cbPriority.DataSource = Enum.GetValues(typeof(Ticket.TicketPriority));
             cbType.DataSource = Enum.GetValues(typeof(Ticket.TicketType));
         }
