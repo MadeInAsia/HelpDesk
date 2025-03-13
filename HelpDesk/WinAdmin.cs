@@ -27,7 +27,7 @@ namespace HelpDesk
             LoadPriorityChart();
         }
 
-        private void LoadDashboard()
+        public void LoadDashboard()
         {
             List<Ticket> tickets = Program.ticketController.GetTickets();
 

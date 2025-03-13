@@ -13,11 +13,13 @@ namespace HelpDesk
     public partial class WinAdminTicketDetails : Form
     {
         private Ticket currentTicket;
+        private WinAdmin adminDash;
         public WinAdminTicketDetails(Ticket ticket)
         {
             InitializeComponent();
             currentTicket = ticket;
             FillTicketDetails();
+            adminDash = new WinAdmin();
 
 
         }
@@ -82,6 +84,10 @@ namespace HelpDesk
                 Employee adminWorker = new Employee(1, "Admin", "User", "IT Department");
                 currentTicket.AssignWorker(adminWorker);
             }
+            Program.ticketController.SaveTicketsFile();
+            MessageBox.Show("Ticket details saved!", "Save", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+            adminDash.LoadDashboard();
 
             //  Refresh comments form to show new updates
             WinAdminComments commentsForm = new WinAdminComments(currentTicket);

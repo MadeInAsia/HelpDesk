@@ -7,6 +7,7 @@ using System.IO;
 using System.Xml.Linq;
 using static HelpDesk.Ticket;
 using System.Windows.Forms;
+using System.Globalization;
 
 namespace HelpDesk
 {
@@ -210,9 +211,10 @@ namespace HelpDesk
             {
                 string value = closeDateElement.Value;
 
-                if (!string.IsNullOrEmpty(value)) // Make sure it's not empty
+                DateTime tempDate;
+                if (DateTime.TryParseExact(value, "M/d/yyyy h:mm:ss tt", CultureInfo.InvariantCulture, DateTimeStyles.None, out tempDate))
                 {
-                    closeDate = DateTime.Parse(value);
+                    closeDate = tempDate;
                 }
             }
             return closeDate;
