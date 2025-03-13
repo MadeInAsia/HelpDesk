@@ -20,8 +20,8 @@ namespace HelpDesk
         {
             InitializeComponent();
 
-            cbtopicList.Items.Add("Select");
-            cbtopicList.Items.Add("was soll hier rein");
+            cbDevice.Items.Add("Select");
+            cbDevice.Items.Add("was soll hier rein");
             cbPriority.DataSource = Enum.GetValues(typeof(Ticket.TicketPriority));
             cbType.DataSource = Enum.GetValues(typeof(Ticket.TicketType));
         }
@@ -41,8 +41,8 @@ namespace HelpDesk
             string name = tbName.Text.Trim();
             string surname = tbSurname.Text.Trim();
             string email = tbEmail.Text.Trim();
-            string topic = cbtopicList.Text.Trim();
-            string reference = tbReference.Text.Trim();
+            string topic = tbTopic.Text.Trim();
+            string device = cbDevice.Text.Trim();
             string details = tbDetails.Text.Trim();
 
             // Validate inputs
@@ -56,7 +56,7 @@ namespace HelpDesk
             Ticket.TicketType type = (Ticket.TicketType)cbType.SelectedItem;
 
             Contact person = new Contact(name, surname, email);
-            Ticket newTicket = new Ticket(person, priority, type, Ticket.TicketStatus.Open, topic, reference, details);
+            Ticket newTicket = new Ticket(person, priority, type, Ticket.TicketStatus.Open, topic, device, details);
 
             // ✅ Debug message to confirm ticket creation
             MessageBox.Show($"New Ticket Created:\nID: {newTicket.TicketID}\nName: {newTicket.Person.Name}", "Debug Info", MessageBoxButtons.OK, MessageBoxIcon.Information);

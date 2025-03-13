@@ -42,11 +42,11 @@
             this.lbPriority = new System.Windows.Forms.Label();
             this.openTicketBtn = new Bunifu.UI.WinForms.BunifuButton.BunifuButton();
             this.label2 = new System.Windows.Forms.Label();
-            this.tbReference = new System.Windows.Forms.TextBox();
+            this.tbTopic = new System.Windows.Forms.TextBox();
             this.tbName = new System.Windows.Forms.TextBox();
             this.lbName = new System.Windows.Forms.Label();
             this.lbTopic = new System.Windows.Forms.Label();
-            this.cbtopicList = new System.Windows.Forms.ComboBox();
+            this.cbDevice = new System.Windows.Forms.ComboBox();
             this.tbDetails = new System.Windows.Forms.TextBox();
             this.bunifuPanel1.SuspendLayout();
             this.SuspendLayout();
@@ -70,11 +70,11 @@
             this.bunifuPanel1.Controls.Add(this.lbPriority);
             this.bunifuPanel1.Controls.Add(this.openTicketBtn);
             this.bunifuPanel1.Controls.Add(this.label2);
-            this.bunifuPanel1.Controls.Add(this.tbReference);
+            this.bunifuPanel1.Controls.Add(this.tbTopic);
             this.bunifuPanel1.Controls.Add(this.tbName);
             this.bunifuPanel1.Controls.Add(this.lbName);
             this.bunifuPanel1.Controls.Add(this.lbTopic);
-            this.bunifuPanel1.Controls.Add(this.cbtopicList);
+            this.bunifuPanel1.Controls.Add(this.cbDevice);
             this.bunifuPanel1.Controls.Add(this.tbDetails);
             this.bunifuPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.bunifuPanel1.Location = new System.Drawing.Point(0, 0);
@@ -218,7 +218,7 @@
             this.openTicketBtn.IdleIconLeftImage = null;
             this.openTicketBtn.IdleIconRightImage = null;
             this.openTicketBtn.IndicateFocus = false;
-            this.openTicketBtn.Location = new System.Drawing.Point(170, 318);
+            this.openTicketBtn.Location = new System.Drawing.Point(164, 323);
             this.openTicketBtn.Name = "openTicketBtn";
             this.openTicketBtn.OnDisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(191)))), ((int)(((byte)(191)))), ((int)(((byte)(191)))));
             this.openTicketBtn.OnDisabledState.BorderRadius = 1;
@@ -266,19 +266,19 @@
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Yu Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.SystemColors.HighlightText;
-            this.label2.Location = new System.Drawing.Point(52, 133);
+            this.label2.Location = new System.Drawing.Point(53, 62);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(52, 17);
             this.label2.TabIndex = 7;
             this.label2.Text = "Device";
             this.label2.Click += new System.EventHandler(this.label2_Click);
             // 
-            // tbReference
+            // tbTopic
             // 
-            this.tbReference.Location = new System.Drawing.Point(132, 132);
-            this.tbReference.Name = "tbReference";
-            this.tbReference.Size = new System.Drawing.Size(429, 20);
-            this.tbReference.TabIndex = 6;
+            this.tbTopic.Location = new System.Drawing.Point(106, 130);
+            this.tbTopic.Name = "tbTopic";
+            this.tbTopic.Size = new System.Drawing.Size(455, 20);
+            this.tbTopic.TabIndex = 6;
             // 
             // tbName
             // 
@@ -303,27 +303,27 @@
             this.lbTopic.AutoSize = true;
             this.lbTopic.Font = new System.Drawing.Font("Yu Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbTopic.ForeColor = System.Drawing.SystemColors.HighlightText;
-            this.lbTopic.Location = new System.Drawing.Point(53, 62);
+            this.lbTopic.Location = new System.Drawing.Point(53, 133);
             this.lbTopic.Name = "lbTopic";
             this.lbTopic.Size = new System.Drawing.Size(43, 17);
             this.lbTopic.TabIndex = 3;
             this.lbTopic.Text = "Topic";
             // 
-            // cbtopicList
+            // cbDevice
             // 
-            this.cbtopicList.FormattingEnabled = true;
-            this.cbtopicList.Location = new System.Drawing.Point(55, 82);
-            this.cbtopicList.Name = "cbtopicList";
-            this.cbtopicList.Size = new System.Drawing.Size(181, 21);
-            this.cbtopicList.TabIndex = 2;
-            this.cbtopicList.SelectedIndexChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged);
+            this.cbDevice.FormattingEnabled = true;
+            this.cbDevice.Location = new System.Drawing.Point(54, 82);
+            this.cbDevice.Name = "cbDevice";
+            this.cbDevice.Size = new System.Drawing.Size(181, 21);
+            this.cbDevice.TabIndex = 2;
+            this.cbDevice.SelectedIndexChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged);
             // 
             // tbDetails
             // 
             this.tbDetails.Location = new System.Drawing.Point(54, 181);
             this.tbDetails.Multiline = true;
             this.tbDetails.Name = "tbDetails";
-            this.tbDetails.Size = new System.Drawing.Size(507, 106);
+            this.tbDetails.Size = new System.Drawing.Size(507, 122);
             this.tbDetails.TabIndex = 1;
             // 
             // WinUserTicketOpen
@@ -348,11 +348,11 @@
 
         private Bunifu.UI.WinForms.BunifuPanel bunifuPanel1;
         private System.Windows.Forms.TextBox tbDetails;
-        private System.Windows.Forms.ComboBox cbtopicList;
+        private System.Windows.Forms.ComboBox cbDevice;
         private System.Windows.Forms.Label lbTopic;
         private System.Windows.Forms.TextBox tbName;
         private System.Windows.Forms.Label lbName;
-        private System.Windows.Forms.TextBox tbReference;
+        private System.Windows.Forms.TextBox tbTopic;
         private Bunifu.UI.WinForms.BunifuButton.BunifuButton openTicketBtn;
         private System.Windows.Forms.Label lbPriority;
         private System.Windows.Forms.ComboBox cbPriority;

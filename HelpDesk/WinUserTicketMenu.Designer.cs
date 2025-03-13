@@ -30,15 +30,17 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(WinUserTicketMenu));
             this.menuPanel = new Bunifu.UI.WinForms.BunifuPanel();
+            this.backBtn = new System.Windows.Forms.PictureBox();
             this.label5 = new System.Windows.Forms.Label();
-            this.textBox4 = new System.Windows.Forms.TextBox();
+            this.ticketInfo = new System.Windows.Forms.TextBox();
             this.tbDetails = new System.Windows.Forms.TextBox();
-            this.label4 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.label1 = new System.Windows.Forms.Label();
+            this.lbDate = new System.Windows.Forms.Label();
+            this.lbWorker = new System.Windows.Forms.Label();
+            this.lbDevice = new System.Windows.Forms.Label();
+            this.lbType = new System.Windows.Forms.Label();
             this.lbTopic = new System.Windows.Forms.Label();
             this.menuPanel.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.backBtn)).BeginInit();
             this.SuspendLayout();
             // 
             // menuPanel
@@ -49,13 +51,14 @@
             this.menuPanel.BorderColor = System.Drawing.Color.Transparent;
             this.menuPanel.BorderRadius = 30;
             this.menuPanel.BorderThickness = 1;
+            this.menuPanel.Controls.Add(this.backBtn);
             this.menuPanel.Controls.Add(this.label5);
-            this.menuPanel.Controls.Add(this.textBox4);
+            this.menuPanel.Controls.Add(this.ticketInfo);
             this.menuPanel.Controls.Add(this.tbDetails);
-            this.menuPanel.Controls.Add(this.label4);
-            this.menuPanel.Controls.Add(this.label3);
-            this.menuPanel.Controls.Add(this.label2);
-            this.menuPanel.Controls.Add(this.label1);
+            this.menuPanel.Controls.Add(this.lbDate);
+            this.menuPanel.Controls.Add(this.lbWorker);
+            this.menuPanel.Controls.Add(this.lbDevice);
+            this.menuPanel.Controls.Add(this.lbType);
             this.menuPanel.Controls.Add(this.lbTopic);
             this.menuPanel.Dock = System.Windows.Forms.DockStyle.Fill;
             this.menuPanel.Location = new System.Drawing.Point(0, 0);
@@ -63,6 +66,17 @@
             this.menuPanel.ShowBorders = true;
             this.menuPanel.Size = new System.Drawing.Size(620, 427);
             this.menuPanel.TabIndex = 1;
+            // 
+            // backBtn
+            // 
+            this.backBtn.Image = global::HelpDesk.Properties.Resources.icons8_zurück_48;
+            this.backBtn.Location = new System.Drawing.Point(555, 15);
+            this.backBtn.Name = "backBtn";
+            this.backBtn.Size = new System.Drawing.Size(40, 42);
+            this.backBtn.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.backBtn.TabIndex = 14;
+            this.backBtn.TabStop = false;
+            this.backBtn.Click += new System.EventHandler(this.backBtn_Click_1);
             // 
             // label5
             // 
@@ -75,13 +89,13 @@
             this.label5.TabIndex = 13;
             this.label5.Text = "Support Comment:";
             // 
-            // textBox4
+            // ticketInfo
             // 
-            this.textBox4.Location = new System.Drawing.Point(27, 106);
-            this.textBox4.Multiline = true;
-            this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(558, 134);
-            this.textBox4.TabIndex = 12;
+            this.ticketInfo.Location = new System.Drawing.Point(27, 106);
+            this.ticketInfo.Multiline = true;
+            this.ticketInfo.Name = "ticketInfo";
+            this.ticketInfo.Size = new System.Drawing.Size(558, 134);
+            this.ticketInfo.TabIndex = 12;
             // 
             // tbDetails
             // 
@@ -91,49 +105,49 @@
             this.tbDetails.Size = new System.Drawing.Size(558, 141);
             this.tbDetails.TabIndex = 11;
             // 
-            // label4
+            // lbDate
             // 
-            this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Yu Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.ForeColor = System.Drawing.SystemColors.HighlightText;
-            this.label4.Location = new System.Drawing.Point(437, 57);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(85, 17);
-            this.label4.TabIndex = 10;
-            this.label4.Text = "Open Date: ";
+            this.lbDate.AutoSize = true;
+            this.lbDate.Font = new System.Drawing.Font("Yu Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbDate.ForeColor = System.Drawing.SystemColors.HighlightText;
+            this.lbDate.Location = new System.Drawing.Point(437, 57);
+            this.lbDate.Name = "lbDate";
+            this.lbDate.Size = new System.Drawing.Size(85, 17);
+            this.lbDate.TabIndex = 10;
+            this.lbDate.Text = "Open Date: ";
             // 
-            // label3
+            // lbWorker
             // 
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Yu Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.ForeColor = System.Drawing.SystemColors.HighlightText;
-            this.label3.Location = new System.Drawing.Point(24, 74);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(156, 17);
-            this.label3.TabIndex = 9;
-            this.label3.Text = "Assigned Worker: none";
+            this.lbWorker.AutoSize = true;
+            this.lbWorker.Font = new System.Drawing.Font("Yu Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbWorker.ForeColor = System.Drawing.SystemColors.HighlightText;
+            this.lbWorker.Location = new System.Drawing.Point(24, 74);
+            this.lbWorker.Name = "lbWorker";
+            this.lbWorker.Size = new System.Drawing.Size(156, 17);
+            this.lbWorker.TabIndex = 9;
+            this.lbWorker.Text = "Assigned Worker: none";
             // 
-            // label2
+            // lbDevice
             // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Yu Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.ForeColor = System.Drawing.SystemColors.HighlightText;
-            this.label2.Location = new System.Drawing.Point(24, 57);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(60, 17);
-            this.label2.TabIndex = 8;
-            this.label2.Text = "Device: ";
+            this.lbDevice.AutoSize = true;
+            this.lbDevice.Font = new System.Drawing.Font("Yu Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbDevice.ForeColor = System.Drawing.SystemColors.HighlightText;
+            this.lbDevice.Location = new System.Drawing.Point(24, 57);
+            this.lbDevice.Name = "lbDevice";
+            this.lbDevice.Size = new System.Drawing.Size(60, 17);
+            this.lbDevice.TabIndex = 8;
+            this.lbDevice.Text = "Device: ";
             // 
-            // label1
+            // lbType
             // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Yu Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.ForeColor = System.Drawing.SystemColors.HighlightText;
-            this.label1.Location = new System.Drawing.Point(24, 40);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(39, 17);
-            this.label1.TabIndex = 6;
-            this.label1.Text = "Type";
+            this.lbType.AutoSize = true;
+            this.lbType.Font = new System.Drawing.Font("Yu Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbType.ForeColor = System.Drawing.SystemColors.HighlightText;
+            this.lbType.Location = new System.Drawing.Point(24, 40);
+            this.lbType.Name = "lbType";
+            this.lbType.Size = new System.Drawing.Size(39, 17);
+            this.lbType.TabIndex = 6;
+            this.lbType.Text = "Type";
             // 
             // lbTopic
             // 
@@ -156,9 +170,11 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "WinUserTicketMenu";
             this.ShowInTaskbar = false;
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "UserTicketMenu";
             this.menuPanel.ResumeLayout(false);
             this.menuPanel.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.backBtn)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -166,13 +182,14 @@
         #endregion
 
         private Bunifu.UI.WinForms.BunifuPanel menuPanel;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label lbDevice;
+        private System.Windows.Forms.Label lbType;
         private System.Windows.Forms.Label lbTopic;
-        private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.TextBox textBox4;
+        private System.Windows.Forms.Label lbWorker;
+        private System.Windows.Forms.Label lbDate;
+        private System.Windows.Forms.TextBox ticketInfo;
         private System.Windows.Forms.TextBox tbDetails;
         private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.PictureBox backBtn;
     }
 }

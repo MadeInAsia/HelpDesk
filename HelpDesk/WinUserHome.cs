@@ -4,6 +4,7 @@ using System.ComponentModel;
 using System.Drawing;
 using System.Linq;
 using System.Windows.Forms;
+using Bunifu.UI.WinForms;
 
 namespace HelpDesk
 {
@@ -26,142 +27,97 @@ namespace HelpDesk
 
             CustomizeDataGridView();
             openTicketsGridView.ColumnHeaderMouseClick += OpenTicketsGridView_ColumnHeaderMouseClick;
-
+            openTicketsGridView.CellClick += OpenTicketsGridView_CellClick;
         }
 
         private void UpdateDataGridView()
         {
-            // Fetch the latest tickets from the ticketController
             var latestTickets = Program.ticketController.GetTickets();
-
-            // Update the BindingList with the latest tickets
             tickets = new BindingList<Ticket>(latestTickets);
-
-            // Set the DataGridView's data source to the updated BindingList
             openTicketsGridView.DataSource = tickets;
         }
+
         private void CustomizeDataGridView()
         {
-
             openTicketsGridView.AutoGenerateColumns = false;
             openTicketsGridView.Columns.Clear();
             openTicketsGridView.EnableHeadersVisualStyles = false;
-            openTicketsGridView.ColumnHeadersDefaultCellStyle.BackColor = ColorTranslator.FromHtml("#5853F2"); 
-            openTicketsGridView.ColumnHeadersDefaultCellStyle.ForeColor = Color.White; 
-            openTicketsGridView.RowsDefaultCellStyle.BackColor = Color.White; 
-            openTicketsGridView.RowsDefaultCellStyle.ForeColor = Color.Black; 
+            openTicketsGridView.ColumnHeadersDefaultCellStyle.BackColor = ColorTranslator.FromHtml("#5853F2");
+            openTicketsGridView.ColumnHeadersDefaultCellStyle.ForeColor = Color.White;
+            openTicketsGridView.RowsDefaultCellStyle.BackColor = Color.White;
+            openTicketsGridView.RowsDefaultCellStyle.ForeColor = Color.Black;
             openTicketsGridView.ReadOnly = true;
 
-
-            var topicColumn = new DataGridViewTextBoxColumn
+            openTicketsGridView.Columns.Add(new DataGridViewTextBoxColumn
             {
-                DataPropertyName = "Topic", 
+                DataPropertyName = "Topic",
                 HeaderText = "Topic",
-                Name = "Topic", 
+                Name = "Topic",
                 Resizable = DataGridViewTriState.False
-            };
-            openTicketsGridView.Columns.Add(topicColumn);
+            });
 
-            var priorityColumn = new DataGridViewTextBoxColumn
+            openTicketsGridView.Columns.Add(new DataGridViewTextBoxColumn
             {
-                DataPropertyName = "Priority", 
+                DataPropertyName = "Priority",
                 HeaderText = "Priority",
-                Name = "Priority", 
+                Name = "Priority",
                 Resizable = DataGridViewTriState.False
-            };
-            openTicketsGridView.Columns.Add(priorityColumn);
+            });
 
-            var typeColumn = new DataGridViewTextBoxColumn
+            openTicketsGridView.Columns.Add(new DataGridViewTextBoxColumn
             {
-                DataPropertyName = "Type", 
+                DataPropertyName = "Type",
                 HeaderText = "Type",
-                Name = "Type", 
-                Resizable = DataGridViewTriState.False 
-            };
-            openTicketsGridView.Columns.Add(typeColumn);
+                Name = "Type",
+                Resizable = DataGridViewTriState.False
+            });
 
-            var statusColumn = new DataGridViewTextBoxColumn
+            openTicketsGridView.Columns.Add(new DataGridViewTextBoxColumn
             {
-                DataPropertyName = "Status", 
+                DataPropertyName = "Status",
                 HeaderText = "Status",
-                Name = "Status", 
-                Resizable = DataGridViewTriState.False 
-            };
-            openTicketsGridView.Columns.Add(statusColumn);
+                Name = "Status",
+                Resizable = DataGridViewTriState.False
+            });
 
-            var openDateColumn = new DataGridViewTextBoxColumn
+            openTicketsGridView.Columns.Add(new DataGridViewTextBoxColumn
             {
-                DataPropertyName = "OpenDate", // Bind to the "OpenDate" property in the Ticket class
+                DataPropertyName = "OpenDate",
                 HeaderText = "Opened Date",
-                Name = "OpenDate", // Set the Name property for reference
-                Resizable = DataGridViewTriState.False // Make the column non-resizable
-            };
-            openTicketsGridView.Columns.Add(openDateColumn);
+                Name = "OpenDate",
+                Resizable = DataGridViewTriState.False
+            });
 
-            // Attach the CellFormatting event handler
             openTicketsGridView.CellFormatting += OpenTicketsGridView_CellFormatting;
         }
 
         private void OpenTicketsGridView_ColumnHeaderMouseClick(object sender, DataGridViewCellMouseEventArgs e)
         {
-            // Get the column name that was clicked
             string columnName = openTicketsGridView.Columns[e.ColumnIndex].Name;
-
-
-            switch (columnName)
-            {
-                case "Topic":
-                    SortData("Topic");
-                    break;
-                case "Priority":
-                    SortData("Priority");
-                    break;
-                case "Type":
-                    SortData("Type");
-                    break;
-                case "Status":
-                    SortData("Status");
-                    break;
-                case "OpenDate":
-                    SortData("OpenDate");
-                    break;
-            }
-
-            // Toggle the sorting direction
+            SortData(columnName);
             sortDirection = sortDirection == ListSortDirection.Ascending ? ListSortDirection.Descending : ListSortDirection.Ascending;
         }
 
         private void SortData(string columnName)
         {
-
             var sortedList = tickets.ToList();
 
             switch (columnName)
             {
                 case "Topic":
-                    sortedList = sortDirection == ListSortDirection.Ascending
-                        ? sortedList.OrderBy(t => t.Topic).ToList()
-                        : sortedList.OrderByDescending(t => t.Topic).ToList();
+                    sortedList = sortDirection == ListSortDirection.Ascending ? sortedList.OrderBy(t => t.Topic).ToList() : sortedList.OrderByDescending(t => t.Topic).ToList();
                     break;
                 case "Priority":
-                    sortedList = sortDirection == ListSortDirection.Ascending
-                        ? sortedList.OrderBy(t => t.Priority).ToList()
-                        : sortedList.OrderByDescending(t => t.Priority).ToList();
+                    sortedList = sortDirection == ListSortDirection.Ascending ? sortedList.OrderBy(t => t.Priority).ToList() : sortedList.OrderByDescending(t => t.Priority).ToList();
                     break;
                 case "Type":
-                    sortedList = sortDirection == ListSortDirection.Ascending
-                        ? sortedList.OrderBy(t => t.Type).ToList()
-                        : sortedList.OrderByDescending(t => t.Type).ToList();
+                    sortedList = sortDirection == ListSortDirection.Ascending ? sortedList.OrderBy(t => t.Type).ToList() : sortedList.OrderByDescending(t => t.Type).ToList();
                     break;
                 case "Status":
-                    sortedList = sortDirection == ListSortDirection.Ascending
-                        ? sortedList.OrderBy(t => t.Status).ToList()
-                        : sortedList.OrderByDescending(t => t.Status).ToList();
+                    sortedList = sortDirection == ListSortDirection.Ascending ? sortedList.OrderBy(t => t.Status).ToList() : sortedList.OrderByDescending(t => t.Status).ToList();
                     break;
                 case "OpenDate":
-                    sortedList = sortDirection == ListSortDirection.Ascending
-                        ? sortedList.OrderBy(t => t.OpenDate).ToList()
-                        : sortedList.OrderByDescending(t => t.OpenDate).ToList();
+                    sortedList = sortDirection == ListSortDirection.Ascending ? sortedList.OrderBy(t => t.OpenDate).ToList() : sortedList.OrderByDescending(t => t.OpenDate).ToList();
                     break;
             }
 
@@ -171,53 +127,51 @@ namespace HelpDesk
 
         private void OpenTicketsGridView_CellFormatting(object sender, DataGridViewCellFormattingEventArgs e)
         {
-
-            if (openTicketsGridView.Columns[e.ColumnIndex].Name == "Status")
+            if (openTicketsGridView.Columns[e.ColumnIndex].Name == "Status" && e.Value != null)
             {
-                if (e.Value != null)
+                switch (e.Value.ToString())
                 {
-                    switch (e.Value.ToString())
-                    {
-                        case "Open":
-                            e.CellStyle.BackColor = Color.Green;
-                            e.CellStyle.ForeColor = Color.White; 
-                            break;
-                        case "Closed":
-                            e.CellStyle.BackColor = Color.Red;
-                            e.CellStyle.ForeColor = Color.White; 
-                            break;
-                        case "InProgress":
-                            e.CellStyle.BackColor = Color.Yellow;
-                            e.CellStyle.ForeColor = Color.Black;
-                            break;
-                    }
-                }
-            }
-
-            // Format the "Priority" column
-            if (openTicketsGridView.Columns[e.ColumnIndex].Name == "Priority")
-            {
-                if (e.Value != null)
-                {
-                    switch (e.Value.ToString())
-                    {
-                        case "Low":
-                            e.CellStyle.BackColor = Color.LightGreen;
-                            break;
-                        case "Medium":
-                            e.CellStyle.BackColor = Color.Yellow;
-                            break;
-                        case "High":
-                            e.CellStyle.BackColor = Color.Orange;
-                            break;
-                        case "Critical":
-                            e.CellStyle.BackColor = Color.Red;
-                            break;
-                    }
+                    case "Open":
+                        e.CellStyle.BackColor = Color.Green;
+                        e.CellStyle.ForeColor = Color.White;
+                        break;
+                    case "Closed":
+                        e.CellStyle.BackColor = Color.Red;
+                        e.CellStyle.ForeColor = Color.White;
+                        break;
+                    case "InProgress":
+                        e.CellStyle.BackColor = Color.Yellow;
+                        e.CellStyle.ForeColor = Color.Black;
+                        break;
                 }
             }
         }
 
+        private void OpenTicketsGridView_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (e.RowIndex >= 0)
+            {
+                var selectedTicket = tickets[e.RowIndex];
+                OpenTicketMenu(selectedTicket);
+            }
+        }
+
+        private void OpenTicketMenu(Ticket selectedTicket)
+        {
+
+            bunifuPanel1.Controls.Clear();
+
+            WinUserTicketMenu ticketMenuForm = new WinUserTicketMenu(selectedTicket, this);
+
+            ticketMenuForm.TopLevel = false; 
+            ticketMenuForm.FormBorderStyle = FormBorderStyle.None; 
+            ticketMenuForm.Dock = DockStyle.Fill;  
+
+    
+            bunifuPanel1.Controls.Add(ticketMenuForm);
+
+            ticketMenuForm.Show();
+        }
 
     }
 }
