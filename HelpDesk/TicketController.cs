@@ -108,8 +108,6 @@ namespace HelpDesk
                     commentsElement.Add(new XElement("Comment", comment));
                 }
                 ticketElement.Add(commentsElement);
-
-                // Add ticket XML to root
                 root.Add(ticketElement);
             }
 

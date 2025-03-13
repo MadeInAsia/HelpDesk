@@ -24,6 +24,18 @@ namespace HelpDesk
         {
             LoadTicketsToListView();
         }
+        private void SetupListView()
+        {
+            listView1.View = View.Details;
+            listView1.FullRowSelect = true;
+            listView1.GridLines = true;
+
+            listView1.Columns.Add("Ticket ID", 100);
+            listView1.Columns.Add("Requester Name", 150);
+            listView1.Columns.Add("Priority", 100);
+            listView1.Columns.Add("Status", 100);
+            listView1.Columns.Add("Topic", 100);
+        }
 
         private void LoadTicketsToListView()
         {
@@ -42,38 +54,26 @@ namespace HelpDesk
                 listView1.Items.Add(item);
             }
         }
+        private Ticket GetSelectedTicket()
+        {
+            if (listView1.SelectedItems.Count == 0)
+            {
+                MessageBox.Show("Please select a ticket first.", "No Ticket Selected", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return null;
+            }
+
+            string selectedTicketID = listView1.SelectedItems[0].Text;
+            return Program.ticketController.GetTickets().FirstOrDefault(t => t.TicketID == selectedTicketID);
+        }
 
         private void listView1_SelectedIndexChanged(object sender, EventArgs e)
         {
 
         }
 
-        private void SetupListView()
-        {
-            listView1.View = View.Details;
-            listView1.FullRowSelect = true;
-            listView1.GridLines = true;
-
-            listView1.Columns.Add("Ticket ID", 100);
-            listView1.Columns.Add("Requester Name", 150);
-            listView1.Columns.Add("Priority", 100);
-            listView1.Columns.Add("Status", 100);
-            listView1.Columns.Add("Topic", 100);
-        }
-
         private void listView1_MouseDoubleClick(object sender, MouseEventArgs e)
         {
-            string selectedTicketID = listView1.SelectedItems[0].Text;
-
-            Ticket selectedTicket = null;
-            foreach (Ticket ticket in Program.ticketController.GetTickets())
-            {
-                if (ticket.TicketID == selectedTicketID)
-                {
-                    selectedTicket = ticket;
-                    break;
-                }
-            }
+            Ticket selectedTicket = GetSelectedTicket();
             if (selectedTicket != null)
             {
                 LoadTicketDetailsPanel(selectedTicket);
@@ -96,30 +96,29 @@ namespace HelpDesk
 
         private void button1_Click(object sender, EventArgs e)
         {
-            if (listView1.SelectedItems.Count == 0)
-            {
-                MessageBox.Show("Please select a ticket first.", "No Ticket Selected", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                return;
-            }
-
-            string selectedTicketID = listView1.SelectedItems[0].Text; // Get ticket ID
-
-            // Find selected ticket
-            Ticket selectedTicket = null;
-            foreach (Ticket ticket in Program.ticketController.GetTickets())
-            {
-                if (ticket.TicketID == selectedTicketID)
-                {
-                    selectedTicket = ticket;
-                    break;
-                }
-            }
-
+            Ticket selectedTicket = GetSelectedTicket();
             if (selectedTicket != null)
             {
                 WinAdminComments commentsForm = new WinAdminComments(selectedTicket);
                 commentsForm.ShowDialog();
             }
         }
-    }
+
+        private void btnPostComment_Click(object sender, EventArgs e)
+        {
+            Ticket selectedTicket = GetSelectedTicket();
+            if (selectedTicket != null)
+            {
+                string adminComment = textBox1.Text.Trim();
+                if (!string.IsNullOrEmpty(adminComment))
+                {
+                    selectedTicket.AddComment("Admin", adminComment);
+                    Program.ticketController.SaveTicketsFile();
+
+                    MessageBox.Show("Comment posted successfully!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    textBox1.Clear();
+                }
+            }
+        }
+            }
 }

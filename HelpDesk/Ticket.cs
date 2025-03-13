@@ -22,7 +22,7 @@ namespace HelpDesk
         public DateTime OpenDate { get; set; }
         public DateTime? CloseDate { get; set; }
         public Employee AssignedWorker { get; set; }
-        public List<String> Comments { get; private set; } //List of status updates
+        public List<String> Comments { get; private set; } 
 
 
         // for tickets from XML (avoids adding new comments)
@@ -61,6 +61,12 @@ namespace HelpDesk
                 LogComment("Ticket created by " + person.Name + person.Nachname);
 
             // change this so that the listbox only shows the ticket instance once, not from user and admin at the same time only one and other or so 
+        }
+
+        public void AddComment(string author, string comment)
+        {
+            string timestamp = DateTime.Now.ToString("MM/dd/yyyy HH:mm:ss");
+            Comments.Add($"{timestamp} - {author}: {comment}");
         }
 
         public enum TicketStatus
