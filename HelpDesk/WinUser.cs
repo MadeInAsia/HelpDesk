@@ -59,5 +59,9 @@ namespace HelpDesk
             ticketOpen.Show();
         }
 
+        private void logoutBtn_Click(object sender, EventArgs e)
+        {
+            Application.Restart();
+        }
     }
 }

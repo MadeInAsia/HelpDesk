@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Linq;
 using System.Windows.Forms;
 using Bunifu.UI.WinForms;
 
@@ -26,7 +27,7 @@ namespace HelpDesk
                 lbType.Text = $"Type: {selectedTicket.Type}";
                 lbDevice.Text = $"Device: {selectedTicket.Reference}";
 
-                // If AssignedWorker is null, handle that safely
+
                 if (selectedTicket.AssignedWorker != null)
                 {
                     lbWorker.Text = $"Worker: {selectedTicket.AssignedWorker.Name} {selectedTicket.AssignedWorker.Nachname}";
@@ -41,8 +42,13 @@ namespace HelpDesk
                 textBox4.Text = selectedTicket.Details;
                 textBox4.Enabled = false;
 
-                tbDetails.Text = string.Join(Environment.NewLine, selectedTicket.Comments);
+                tbDetails.Text = string.Join(Environment.NewLine,
+                    selectedTicket.Comments
+                        .Where(c => !c.Contains("Ticket created by")) // Filter out auto-created logs
+                        .Where(c => !c.StartsWith("Assigned to"))     // Optional: also filter "assigned" logs
+                );
                 tbDetails.Enabled = false;
+
 
 
             }

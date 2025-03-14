@@ -328,6 +328,7 @@
     <Content Include="Bunifu\Bunifu.UI.WinForms.BunifuTransition.dll" />
     <Content Include="Bunifu\Bunifu.UI.WinForms.BunifuUserControl.dll" />
     <Content Include="Bunifu\Bunifu.UI.WinForms.Deprecated.dll" />
+    <None Include="Resources\icons8-ausgang-60.png" />
     <None Include="Resources\icons8-zurück-48.png" />
     <None Include="Resources\icons8-ticket-löschen-90.png" />
     <None Include="Resources\icons8-ticket-hinzufügen-100.png" />

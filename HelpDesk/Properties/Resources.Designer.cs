@@ -73,6 +73,16 @@ namespace HelpDesk.Properties {
         /// <summary>
         ///   Sucht eine lokalisierte Ressource vom Typ System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap icons8_ausgang_60 {
+            get {
+                object obj = ResourceManager.GetObject("icons8-ausgang-60", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Sucht eine lokalisierte Ressource vom Typ System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap icons8_benutzer_50 {
             get {
                 object obj = ResourceManager.GetObject("icons8-benutzer-50", resourceCulture);
