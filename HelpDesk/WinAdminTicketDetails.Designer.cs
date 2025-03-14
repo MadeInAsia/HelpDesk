@@ -56,10 +56,10 @@
             // lbTicketID
             // 
             this.lbTicketID.AutoSize = true;
-            this.lbTicketID.Font = new System.Drawing.Font("Heebo", 8.25F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbTicketID.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbTicketID.Location = new System.Drawing.Point(32, 32);
             this.lbTicketID.Name = "lbTicketID";
-            this.lbTicketID.Size = new System.Drawing.Size(56, 17);
+            this.lbTicketID.Size = new System.Drawing.Size(54, 13);
             this.lbTicketID.TabIndex = 0;
             this.lbTicketID.Text = "Ticket ID:";
             // 
@@ -84,7 +84,7 @@
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(191, 136);
+            this.label5.Location = new System.Drawing.Point(32, 162);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(37, 13);
             this.label5.TabIndex = 4;
@@ -93,11 +93,11 @@
             // lbReference
             // 
             this.lbReference.AutoSize = true;
-            this.lbReference.Location = new System.Drawing.Point(32, 162);
+            this.lbReference.Location = new System.Drawing.Point(191, 136);
             this.lbReference.Name = "lbReference";
-            this.lbReference.Size = new System.Drawing.Size(60, 13);
+            this.lbReference.Size = new System.Drawing.Size(44, 13);
             this.lbReference.TabIndex = 5;
-            this.lbReference.Text = "Reference:";
+            this.lbReference.Text = "Device:";
             // 
             // tbContact
             // 
@@ -125,18 +125,18 @@
             // 
             // tbTopic
             // 
-            this.tbTopic.Location = new System.Drawing.Point(237, 132);
+            this.tbTopic.Location = new System.Drawing.Point(79, 159);
             this.tbTopic.Name = "tbTopic";
             this.tbTopic.ReadOnly = true;
-            this.tbTopic.Size = new System.Drawing.Size(110, 20);
+            this.tbTopic.Size = new System.Drawing.Size(282, 20);
             this.tbTopic.TabIndex = 9;
             // 
             // tbReference
             // 
-            this.tbReference.Location = new System.Drawing.Point(98, 159);
+            this.tbReference.Location = new System.Drawing.Point(237, 134);
             this.tbReference.Name = "tbReference";
             this.tbReference.ReadOnly = true;
-            this.tbReference.Size = new System.Drawing.Size(249, 20);
+            this.tbReference.Size = new System.Drawing.Size(124, 20);
             this.tbReference.TabIndex = 10;
             // 
             // label1

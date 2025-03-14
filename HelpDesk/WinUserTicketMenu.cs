@@ -25,20 +25,33 @@ namespace HelpDesk
                 lbTopic.Text = $"Topic: {selectedTicket.Topic}";
                 lbType.Text = $"Type: {selectedTicket.Type}";
                 lbDevice.Text = $"Device: {selectedTicket.Reference}";
-                lbWorker.Text = $"Worker: {lbWorker.Text}";
-                lbDate.Text = $"Opening Date: {selectedTicket.OpenDate.ToString("MM/dd/yyyy")}";
 
+                // If AssignedWorker is null, handle that safely
+                if (selectedTicket.AssignedWorker != null)
+                {
+                    lbWorker.Text = $"Worker: {selectedTicket.AssignedWorker.Name} {selectedTicket.AssignedWorker.Nachname}";
+                }
+                else
+                {
+                    lbWorker.Text = "Worker: Not Assigned";
+                }
+
+                lbDate.Text = $"Opening Date: {selectedTicket.OpenDate:MM/dd/yyyy}";
 
                 textBox4.Text = selectedTicket.Details;
-
                 textBox4.Enabled = false;
+
+                tbDetails.Text = string.Join(Environment.NewLine, selectedTicket.Comments);
                 tbDetails.Enabled = false;
+
+
             }
             else
             {
                 MessageBox.Show("No ticket data found.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
+
 
 
 
