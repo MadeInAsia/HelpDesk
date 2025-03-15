@@ -4,7 +4,7 @@
 *Help Desk Ticket System*
 :+1:
 
-## Gebrauchs Anweisung##
+## Gebrauchs Anweisung
 ### USER ###
 - Username : user
 - Password : 123
